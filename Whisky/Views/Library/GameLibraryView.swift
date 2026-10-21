@@ -42,6 +42,9 @@ struct GameLibraryView: View {
     @State private var games: [LibraryGame] = []
     @State private var search = ""
     @State private var loading = true
+    /// Games launched recently. Wine can take a while to show a window, and a second click
+    /// starts a second copy that fights the first.
+    @State private var recentlyLaunched: [String: Date] = [:]
 
     private let columns = [GridItem(.adaptive(minimum: 150, maximum: 190), spacing: 22)]
 
@@ -119,12 +122,26 @@ struct GameLibraryView: View {
     }
 
     private func launch(_ game: LibraryGame) {
+        if let last = recentlyLaunched[game.id], Date().timeIntervalSince(last) < 20 { return }
+        recentlyLaunched[game.id] = Date()
         guard let bottle = bottleVM.bottles.first(where: { $0.url == game.bottleURL }) else { return }
         switch game.source {
         case .steam(let appID, let steamExe):
-            Task.detached(priority: .userInitiated) {
-                try? await Wine.runProgram(at: steamExe, args: ["-silent", "steam://rungameid/\(appID)"],
-                                           bottle: bottle)
+            if let direct = GameCompat.forGame(game) {
+                // Known game: make sure Steam is up (for DRM), then start the game itself with its workarounds.
+                // This also skips Steam's launch-options dialog, which doesn't render under Wine on macOS.
+                GameCompat.prepareDirectLaunch(appID: appID, executable: direct.executable)
+                Task.detached(priority: .userInitiated) {
+                    try? await Wine.runProgram(at: steamExe, args: ["-silent", "-noverifyfiles"], bottle: bottle)
+                    try? await Task.sleep(for: .seconds(3))
+                    try? await Wine.runProgram(at: direct.executable, bottle: bottle,
+                                               environment: direct.compat.environment)
+                }
+            } else {
+                Task.detached(priority: .userInitiated) {
+                    try? await Wine.runProgram(at: steamExe, args: ["-silent", "steam://rungameid/\(appID)"],
+                                               bottle: bottle)
+                }
             }
         case .pinned(let exe):
             Program(url: exe, bottle: bottle).run()
@@ -223,8 +240,8 @@ struct GameCard: View {
         guard !launching else { return }
         launching = true
         onPlay()
-        // Wine takes a few seconds to bring the game up; keep the spinner briefly so the click feels acknowledged.
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4) { launching = false }
+        // Wine can take a while to bring the game up; keep the spinner (and block re-clicks) meanwhile.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 20) { launching = false }
     }
 
     private func createShortcut() {
@@ -241,9 +258,17 @@ struct GameCard: View {
             Task(priority: .userInitiated) {
                 switch game.source {
                 case .steam(let appID, let steamExe):
-                    let command = Wine.generateRunCommand(
+                    var command = Wine.generateRunCommand(
                         at: steamExe, bottle: bottle, args: "-silent steam://rungameid/\(appID)", environment: [:]
                     )
+                    if let direct = GameCompat.forGame(game) {
+                        GameCompat.prepareDirectLaunch(appID: appID, executable: direct.executable)
+                        command = Wine.generateRunCommand(
+                            at: steamExe, bottle: bottle, args: "-silent -noverifyfiles", environment: [:]
+                        ) + "; sleep 3; " + Wine.generateRunCommand(
+                            at: direct.executable, bottle: bottle, args: "", environment: direct.compat.environment
+                        )
+                    }
                     await ProgramShortcut.createShortcut(command: command, icon: artwork, app: url)
                 case .pinned(let exe):
                     await ProgramShortcut.createShortcut(Program(url: exe, bottle: bottle), app: url,

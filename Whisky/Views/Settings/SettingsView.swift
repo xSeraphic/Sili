@@ -24,6 +24,8 @@ struct SettingsView: View {
     @AppStorage("killOnTerminate") var killOnTerminate = true
     @AppStorage("checkWhiskyWineUpdates") var checkWhiskyWineUpdates = true
     @AppStorage("defaultBottleLocation") var defaultBottleLocation = BottleData.defaultBottleDir
+    @State private var dxmtEnabled = DXMT.isEnabled
+    @State private var dxmtError: String?
 
     var body: some View {
         Form {
@@ -44,6 +46,32 @@ struct SettingsView: View {
                         if result == .OK, let url = panel.urls.first {
                             defaultBottleLocation = url
                         }
+                    }
+                }
+            }
+            if DXMT.isAvailable {
+                Section("Graphics") {
+                    Toggle(isOn: $dxmtEnabled) {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("Use DXMT for DirectX 10/11")
+                            Text("Translates DirectX 11 straight to Metal: faster, and more games start. Turn off to "
+                                 + "use Wine's own DirectX if a game misbehaves. Applies to all bottles; close running "
+                                 + "games before switching.")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    .onChange(of: dxmtEnabled) { _, enabled in
+                        do {
+                            try DXMT.setEnabled(enabled)
+                            dxmtError = nil
+                        } catch {
+                            dxmtError = error.localizedDescription
+                            dxmtEnabled = DXMT.isEnabled
+                        }
+                    }
+                    if let dxmtError {
+                        Text(dxmtError).font(.caption).foregroundStyle(.red)
                     }
                 }
             }

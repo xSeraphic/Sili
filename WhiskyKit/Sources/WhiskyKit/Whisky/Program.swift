@@ -81,7 +81,9 @@ public final class Program: ObservableObject, Equatable, Hashable, Identifiable,
     }
 
     public func generateEnvironment() -> [String: String] {
-        var environment = settings.environment
+        // Known per-game workarounds first; the user's own settings win.
+        var environment = GameCompat.byExecutable[url.lastPathComponent.lowercased()]?.environment ?? [:]
+        environment.merge(settings.environment, uniquingKeysWith: { $1 })
         if settings.locale != .auto {
             environment["LC_ALL"] = settings.locale.rawValue
         }

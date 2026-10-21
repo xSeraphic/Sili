@@ -103,6 +103,7 @@ public class Wine {
         if bottle.settings.dxvk {
             try enableDXVK(bottle: bottle)
         }
+        let args = EngineEnvironment.prepareLaunch(of: url, args: args, bottle: bottle)
 
         for await _ in try Self.runWineProcess(
             name: url.lastPathComponent,
@@ -214,9 +215,7 @@ public class Wine {
     }
 
     public static func enableDXVK(bottle: Bottle) throws {
-        // Newer engine builds ship DXMT instead of DXVK; skip if DXVK isn't bundled.
-        let dxvkPath = Wine.dxvkFolder.path(percentEncoded: false)
-        guard FileManager.default.fileExists(atPath: dxvkPath) else { return }
+        guard FileManager.default.fileExists(atPath: Wine.dxvkFolder.path(percentEncoded: false)) else { return }
         try FileManager.default.replaceDLLs(
             in: bottle.url.appending(path: "drive_c").appending(path: "windows").appending(path: "system32"),
             withContentsIn: Wine.dxvkFolder.appending(path: "x64")
@@ -237,6 +236,7 @@ public class Wine {
             "GST_DEBUG": "1"
         ]
         bottle.settings.environmentVariables(wineEnv: &result)
+        EngineEnvironment.apply(to: &result)
         guard !environment.isEmpty else { return result }
         result.merge(environment, uniquingKeysWith: { $1 })
         return result

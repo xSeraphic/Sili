@@ -107,6 +107,35 @@ struct GameLibraryTests {
         #expect(names == ["Cool Game"])
     }
 
+    @Test func appliesKnownGameWorkarounds() throws {
+        let steam = bottle.url.appending(path: "drive_c/Program Files (x86)/Steam")
+        try write("", to: steam.appending(path: "steam.exe"))
+        try write(manifest(id: 12120, name: "Grand Theft Auto: San Andreas", dir: "GTA San Andreas"),
+                  to: steam.appending(path: "steamapps/appmanifest_12120.acf"))
+        let exe = steam.appending(path: "steamapps/common/GTA San Andreas/gta-sa.exe")
+        try write("", to: exe)
+
+        let game = try #require(GameLibraryScanner.scan(bottle: bottle).first)
+        let direct = try #require(GameCompat.forGame(game))
+        #expect(direct.executable.lastPathComponent == "gta-sa.exe")
+        #expect(direct.compat.environment["WINE_CPU_TOPOLOGY"] == "2:0,1")
+        #expect(GameCompat.byExecutable["gta-sa.exe"] != nil)
+
+        GameCompat.prepareDirectLaunch(appID: 12120, executable: direct.executable)
+        let appid = try String(contentsOf: exe.deletingLastPathComponent().appending(path: "steam_appid.txt"),
+                               encoding: .utf8)
+        #expect(appid == "12120")
+    }
+
+    @Test func skipsWorkaroundWhenExecutableIsMissing() throws {
+        let steam = bottle.url.appending(path: "drive_c/Program Files (x86)/Steam")
+        try write("", to: steam.appending(path: "steam.exe"))
+        try write(manifest(id: 12120, name: "Grand Theft Auto: San Andreas", dir: "GTA San Andreas"),
+                  to: steam.appending(path: "steamapps/appmanifest_12120.acf"))
+        let game = try #require(GameLibraryScanner.scan(bottle: bottle).first)
+        #expect(GameCompat.forGame(game) == nil)
+    }
+
     @Test func mapsWindowsPathsToBottleFolders() {
         let url = GameLibraryScanner.macURL(forWindowsPath: "C:\\Program Files\\Steam", bottle: bottle)
         #expect(url?.path(percentEncoded: false).hasSuffix("Bottle/drive_c/Program Files/Steam") == true)
