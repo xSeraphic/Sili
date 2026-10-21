@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="Resources/sili-icon.svg" width="128" alt="Sili icon">
+  <img src="Resources/sili-icon.png" width="128" alt="Sili icon">
 
   # Sili 🌶️
   *Run Windows games and apps on your Apple Silicon Mac, for free*

@@ -9,7 +9,7 @@ All notable changes to Sili are listed here. Versions follow [Semantic Versionin
 The first release of Sili, a maintained fork of [Whisky](https://github.com/Whisky-App/Whisky).
 
 ### Added
-- Sili name, chilli icon and bundle ID (`com.mayonstudios.sili`).
+- Sili name, glossy chilli app icon and bundle ID (`com.mayonstudios.sili`).
 - Automatic app updates through Sparkle, signed with Sili's own key.
 - `scripts/build-engine.sh` to build the Wine engine from upstream releases.
 - `scripts/release.sh` to version, build, sign and publish releases.
