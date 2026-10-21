@@ -4,6 +4,20 @@ All notable changes to Sili are listed here. Versions follow [Semantic Versionin
 
 ## [Unreleased]
 
+Planned as **1.1.0** (minor: new feature, nothing breaking).
+
+### Added
+- **Game Library**: a new sidebar section showing every game across all bottles in one grid.
+  - Finds Windows Steam games automatically (including extra Steam library folders on other drives) plus pinned programs.
+  - Cover art from Steam's local cache, then Steam's CDN, then the program's own icon.
+  - Hover to Play, or double-click. Steam games launch through the bottle's Steam (`steam://rungameid/`).
+  - Search, sort by name, recently played or bottle, and right-click to Show in Finder, Open Bottle or Create Dock Shortcut.
+- Dock shortcuts for Steam games, with the game's cover art as the icon.
+- Unit tests for the library scanner (`swift test` in `WhiskyKit`).
+
+### Changed
+- WhiskyKit now fetches SemanticVersion over HTTPS instead of SSH, so it builds without GitHub SSH keys.
+
 ## [1.0.0] - 2026-10-21
 
 The first release of Sili, a maintained fork of [Whisky](https://github.com/Whisky-App/Whisky).

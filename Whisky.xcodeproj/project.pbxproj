@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B30C20A5F8BCA4EDCFCC5CB /* GameLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887EAD8ADF8390ACE278705B /* GameLibraryView.swift */; };
 		6330DD962B1B0EA4007A625A /* RenameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6330DD952B1B0EA4007A625A /* RenameView.swift */; };
 		6365C4C12B1AA69D00AAE1FD /* Animation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365C4C02B1AA69D00AAE1FD /* Animation+Extensions.swift */; };
 		6365C4C32B1AA8CD00AAE1FD /* BottleListEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365C4C22B1AA8CD00AAE1FD /* BottleListEntry.swift */; };
@@ -110,6 +111,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		887EAD8ADF8390ACE278705B /* GameLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLibraryView.swift; sourceTree = "<group>"; };
 		6330DD952B1B0EA4007A625A /* RenameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenameView.swift; sourceTree = "<group>"; };
 		6365C4C02B1AA69D00AAE1FD /* Animation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation+Extensions.swift"; sourceTree = "<group>"; };
 		6365C4C22B1AA8CD00AAE1FD /* BottleListEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleListEntry.swift; sourceTree = "<group>"; };
@@ -199,6 +201,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32215A3F65ABA8C737D42316 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				887EAD8ADF8390ACE278705B /* GameLibraryView.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		6365C4BF2B1AA69500AAE1FD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +332,7 @@
 		6E5197CD29D71FCD00CF655E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				32215A3F65ABA8C737D42316 /* Library */,
 				63FFDE822ADEFADF00178665 /* Common */,
 				6E49E01F2AECB7D000009CAC /* Settings */,
 				6E6C0CF02A419A5800356232 /* Setup */,
@@ -590,6 +601,7 @@
 				6763D8F62BC6314100651D27 /* Constants.swift in Sources */,
 				6E70A4A12A9A280C007799E9 /* WhiskyCmd.swift in Sources */,
 				6E40495829CCA19C006E3F1B /* ContentView.swift in Sources */,
+				6B30C20A5F8BCA4EDCFCC5CB /* GameLibraryView.swift in Sources */,
 				67D278512BC5907E006F9A1E /* ActionView.swift in Sources */,
 				6EF557982A410599001A4F09 /* SetupView.swift in Sources */,
 				6E355E5A29D782B2002D83BE /* ProgramsView.swift in Sources */,
