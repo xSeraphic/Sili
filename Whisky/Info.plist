@@ -54,9 +54,11 @@
 		</dict>
 	</array>
 	<key>SUEnableAutomaticChecks</key>
-	<false/>
+	<true/>
 	<key>SUFeedURL</key>
 	<string>https://github.com/xSeraphic/Sili/releases/latest/download/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>0Y5uURgT0PeSodwOzJRHHYDaC0ohmUvkspTdRpmdSEM=</string>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
