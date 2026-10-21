@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="Resources/sili-icon.svg" width="128" alt="Sili icon">
+  <img src="Resources/sili-icon.png" width="128" alt="Sili icon">
 
   # Sili 🌶️
   *Run Windows games and apps on your Apple Silicon Mac, for free*
@@ -39,7 +39,7 @@ The name comes from *sili*, the chilli at the heart of Bicolano cooking. It's sm
    cd Sili
    xcodebuild -project Whisky.xcodeproj -scheme Whisky -configuration Release \
      -derivedDataPath ../Sili-build \
-     CODE_SIGN_IDENTITY=- CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= build
+     CODE_SIGN_IDENTITY=- CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= ENABLE_HARDENED_RUNTIME=NO build
    ```
 
 3. The app is at `../Sili-build/Build/Products/Release/Sili.app`.
