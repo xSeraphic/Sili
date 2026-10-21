@@ -26,7 +26,8 @@ import ArgumentParser
 @main
 struct Whisky: ParsableCommand {
     static let configuration = CommandConfiguration(
-        abstract: "A CLI interface for Whisky.",
+        commandName: "sili",
+        abstract: "A CLI interface for Sili.",
         subcommands: [List.self,
                       Create.self,
                       Add.self,
@@ -139,7 +140,7 @@ extension Whisky {
     }
 
     struct Remove: ParsableCommand {
-        static let configuration = CommandConfiguration(abstract: "Remove an existing bottle from Whisky.",
+        static let configuration = CommandConfiguration(abstract: "Remove an existing bottle from Sili.",
                                                         discussion: "This will not remove the bottle from disk.")
 
         @Argument var name: String

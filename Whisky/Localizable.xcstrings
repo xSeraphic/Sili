@@ -9393,109 +9393,109 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تثبيت Whisky CLI..."
+            "value" : "تثبيت Sili CLI..."
           }
         },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nainstalovat Whisky CLI..."
+            "value" : "Nainstalovat Sili CLI..."
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Installer Whisky CLI..."
+            "value" : "Installer Sili CLI..."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Whisky CLI installieren..."
+            "value" : "Sili CLI installieren..."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Install Whisky CLI..."
+            "value" : "Install Sili CLI..."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Instalar Whisky CLI..."
+            "value" : "Instalar Sili CLI..."
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Asenna Whisky CLI..."
+            "value" : "Asenna Sili CLI..."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Installer Whisky CLI..."
+            "value" : "Installer Sili CLI..."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Installa Whisky CLI..."
+            "value" : "Installa Sili CLI..."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Whisky CLI をインストール..."
+            "value" : "Sili CLI をインストール..."
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Whisky CLI 설치..."
+            "value" : "Sili CLI 설치..."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Installeer de Whisky CLI..."
+            "value" : "Installeer de Sili CLI..."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zainstaluj Whisky w formie CLI..."
+            "value" : "Zainstaluj Sili w formie CLI..."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Instalar o Whisky CLI..."
+            "value" : "Instalar o Sili CLI..."
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Instalar Whisky CLI..."
+            "value" : "Instalar Sili CLI..."
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Instalează CLI Whisky..."
+            "value" : "Instalează CLI Sili..."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Установить Whisky CLI..."
+            "value" : "Установить Sili CLI..."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Whisky CLI'i Yükle..."
+            "value" : "Sili CLI'i Yükle..."
           }
         },
         "uk" : {
@@ -9507,19 +9507,19 @@
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cài đặt Whisky CLI..."
+            "value" : "Cài đặt Sili CLI..."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "安装 Whisky CLI..."
+            "value" : "安装 Sili CLI..."
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "安裝Whisky CLI⋯"
+            "value" : "安裝Sili CLI⋯"
           }
         }
       }
@@ -14563,133 +14563,133 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إنهاء عمليات Wine عند إغلاق Whisky"
+            "value" : "إنهاء عمليات Wine عند إغلاق Sili"
           }
         },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ukončit Wine procesy při uzavření Whisky"
+            "value" : "Ukončit Wine procesy při uzavření Sili"
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Afslut Wine-processer, når Whisky lukkes"
+            "value" : "Afslut Wine-processer, når Sili lukkes"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wine-Prozesse beim Schließen von Whisky beenden"
+            "value" : "Wine-Prozesse beim Schließen von Sili beenden"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminate Wine processes when Whisky closes"
+            "value" : "Terminate Wine processes when Sili closes"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminar procesos de Wine cuando Whisky cierre"
+            "value" : "Terminar procesos de Wine cuando Sili cierre"
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sulje Wine-prosessit kun Whisky suljetaan"
+            "value" : "Sulje Wine-prosessit kun Sili suljetaan"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminer les processus de Wine à la fermeture de Whisky"
+            "value" : "Terminer les processus de Wine à la fermeture de Sili"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Termina i processi Wine quando Whisky chiude"
+            "value" : "Termina i processi Wine quando Sili chiude"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Whisky の終了時に Wine の全プロセスを停止する"
+            "value" : "Sili の終了時に Wine の全プロセスを停止する"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Whisky를 종료할 때 Wine 프로세스도 종료"
+            "value" : "Sili를 종료할 때 Wine 프로세스도 종료"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Beëindig de Wine processen wanneer Whisky sluit"
+            "value" : "Beëindig de Wine processen wanneer Sili sluit"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zakończ proces Wine, gdy Whisky zostanie zamknięte"
+            "value" : "Zakończ proces Wine, gdy Sili zostanie zamknięte"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminate Wine processes when Whisky closes"
+            "value" : "Terminate Wine processes when Sili closes"
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Termine processos Wine quando o Whisky fechar"
+            "value" : "Termine processos Wine quando o Sili fechar"
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Închide procesele Wine atunci când Whisky se închide"
+            "value" : "Închide procesele Wine atunci când Sili se închide"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Закрывать процессы Wine при закрытии Whisky"
+            "value" : "Закрывать процессы Wine при закрытии Sili"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Whisky kapandığında Wine işlemlerini sonlandır"
+            "value" : "Sili kapandığında Wine işlemlerini sonlandır"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Завершити процеси Wine, коли закривається Whisky"
+            "value" : "Завершити процеси Wine, коли закривається Sili"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Buộc Wine phải tắt khi Whisky tắt"
+            "value" : "Buộc Wine phải tắt khi Sili tắt"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "关闭 Whisky 时结束 Wine 进程"
+            "value" : "关闭 Sili 时结束 Wine 进程"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Whisky 關閉時終止 Wine 進程"
+            "value" : "Sili 關閉時終止 Wine 進程"
           }
         }
       }
@@ -14699,31 +14699,31 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "التحقق تلقائيا من تحديثات Whisky"
+            "value" : "التحقق تلقائيا من تحديثات Sili"
           }
         },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automaticky kontrolovat Whisky aktualizace"
+            "value" : "Automaticky kontrolovat Sili aktualizace"
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Søg automatisk efter Whisky-opdateringer"
+            "value" : "Søg automatisk efter Sili-opdateringer"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automatisch nach Updates für Whisky suchen"
+            "value" : "Automatisch nach Updates für Sili suchen"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automatically check for Whisky updates"
+            "value" : "Automatically check for Sili updates"
           }
         },
         "es" : {
@@ -14735,97 +14735,97 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automaattisesti tarkista Whisky päivityksien varalta"
+            "value" : "Automaattisesti tarkista Sili päivityksien varalta"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rechercher automatiquement les mises à jour de Whisky"
+            "value" : "Rechercher automatiquement les mises à jour de Sili"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Controlla automaticamente aggiornamenti di Whisky"
+            "value" : "Controlla automaticamente aggiornamenti di Sili"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Whisky のアップデートを自動的に確認する"
+            "value" : "Sili のアップデートを自動的に確認する"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Whisky 업데이트를 자동으로 확인"
+            "value" : "Sili 업데이트를 자동으로 확인"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automatisch controleren op Whisky updates"
+            "value" : "Automatisch controleren op Sili updates"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automatycznie sprawdzaj aktualizacje Whisky"
+            "value" : "Automatycznie sprawdzaj aktualizacje Sili"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automatically check for Whisky updates"
+            "value" : "Automatically check for Sili updates"
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verifique automaticamente para atualizações do Whisky"
+            "value" : "Verifique automaticamente para atualizações do Sili"
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verifică automat pentru actualizări Whisky"
+            "value" : "Verifică automat pentru actualizări Sili"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Автоматически проверять на наличие обновлений Whisky"
+            "value" : "Автоматически проверять на наличие обновлений Sili"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Whisky güncellemelerini otomatik olarak kontrol et"
+            "value" : "Sili güncellemelerini otomatik olarak kontrol et"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Автоматична перевірка оновлень Whisky"
+            "value" : "Автоматична перевірка оновлень Sili"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tự động kiểm tra bản cập nhật của Whisky"
+            "value" : "Tự động kiểm tra bản cập nhật của Sili"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "自动检查Whisky更新"
+            "value" : "自动检查Sili更新"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "自動檢查 Whisky 更新"
+            "value" : "自動檢查 Sili 更新"
           }
         }
       }
@@ -14835,85 +14835,85 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "التحقق تلقائيا من تحديثات WhiskyWine"
+            "value" : "التحقق تلقائيا من تحديثات Sili Engine"
           }
         },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automaticky vyhledávat WhiskyWine aktualizace"
+            "value" : "Automaticky vyhledávat Sili Engine aktualizace"
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Søg automatisk efter WhiskyWine-opdateringer"
+            "value" : "Søg automatisk efter Sili Engine-opdateringer"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automatisch nach Updates für WhiskyWine suchen"
+            "value" : "Automatisch nach Updates für Sili Engine suchen"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automatically check for WhiskyWine updates"
+            "value" : "Automatically check for Sili Engine updates"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Buscar actualizaciones de WhiskyWine automáticamente"
+            "value" : "Buscar actualizaciones de Sili Engine automáticamente"
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automaattisesti tarkista WhiskyWine päivityksien varalta"
+            "value" : "Automaattisesti tarkista Sili Engine päivityksien varalta"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rechercher automatiquement les mises à jour de WhiskyWine"
+            "value" : "Rechercher automatiquement les mises à jour de Sili Engine"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Controlla automaticamente aggiornamenti di WhiskyWine"
+            "value" : "Controlla automaticamente aggiornamenti di Sili Engine"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "WhiskyWine のアップデートを自動的に確認する"
+            "value" : "Sili Engine のアップデートを自動的に確認する"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "WhiskyWine 업데이트를 자동으로 확인"
+            "value" : "Sili Engine 업데이트를 자동으로 확인"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automatisch controleren op WhiskyWine updates"
+            "value" : "Automatisch controleren op Sili Engine updates"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automatycznie sprawdzaj dostępność aktualizacji WhiskyWine"
+            "value" : "Automatycznie sprawdzaj dostępność aktualizacji Sili Engine"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verificar automaticamente atualizações do WhiskyWine"
+            "value" : "Verificar automaticamente atualizações do Sili Engine"
           }
         },
         "pt-PT" : {
@@ -14925,13 +14925,13 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verifică automat pentru actualizări WhiskyWine"
+            "value" : "Verifică automat pentru actualizări Sili Engine"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Автоматически проверять на наличие обновлений WhiskyWine"
+            "value" : "Автоматически проверять на наличие обновлений Sili Engine"
           }
         },
         "tr" : {
@@ -14943,25 +14943,25 @@
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Автоматично перевіряти оновлення WhiskyWine"
+            "value" : "Автоматично перевіряти оновлення Sili Engine"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tự động kiểm tra bản cập nhật WhiskyWine"
+            "value" : "Tự động kiểm tra bản cập nhật Sili Engine"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "自动检查 WhiskyWine 更新"
+            "value" : "自动检查 Sili Engine 更新"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "自動檢查 WhiskyWine 更新"
+            "value" : "自動檢查 Sili Engine 更新"
           }
         }
       }
@@ -16467,133 +16467,133 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إدارة التبعيات المطلوبة لـWhisky."
+            "value" : "إدارة التبعيات المطلوبة لـSili."
           }
         },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Spravovat požadované závislosti Whisky."
+            "value" : "Spravovat požadované závislosti Sili."
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Administrer Whisky's nødvendige afhængigheder."
+            "value" : "Administrer Sili's nødvendige afhængigheder."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verwalte Whiskys erforderliche Abhängigkeiten."
+            "value" : "Verwalte Silis erforderliche Abhängigkeiten."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Manage Whisky's required dependencies."
+            "value" : "Manage Sili's required dependencies."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Administre las dependencias requeridas de Whisky."
+            "value" : "Administre las dependencias requeridas de Sili."
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hallitse Whiskyn tarvittavia riippuvuuksia."
+            "value" : "Hallitse Silin tarvittavia riippuvuuksia."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gérer les dépendances requises de Whisky."
+            "value" : "Gérer les dépendances requises de Sili."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gestisci le dipendenze richieste da Whisky."
+            "value" : "Gestisci le dipendenze richieste da Sili."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Whisky に必要な依存関係を管理します。"
+            "value" : "Sili に必要な依存関係を管理します。"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Whisky의 필수 의존성 관리하기."
+            "value" : "Sili의 필수 의존성 관리하기."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Beheer Whisky's vereiste dependencies."
+            "value" : "Beheer Sili's vereiste dependencies."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zarządzaj wymaganymi zależnościami Whisky."
+            "value" : "Zarządzaj wymaganymi zależnościami Sili."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gerir as dependências necessárias do Whisky."
+            "value" : "Gerir as dependências necessárias do Sili."
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gerencie dependências necessárias do Whisky."
+            "value" : "Gerencie dependências necessárias do Sili."
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gestionează dependențele cerute de Whisky."
+            "value" : "Gestionează dependențele cerute de Sili."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Управление требуемыми зависимостями Whisky."
+            "value" : "Управление требуемыми зависимостями Sili."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Whisky'nin gerekli yazılımlarını düzenle."
+            "value" : "Sili'nin gerekli yazılımlarını düzenle."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Керування необхідними залежностями Whisky."
+            "value" : "Керування необхідними залежностями Sili."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quản lý những tệp quan trọng của Whisky."
+            "value" : "Quản lý những tệp quan trọng của Sili."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "管理 Whisky 所需依赖"
+            "value" : "管理 Sili 所需依赖"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "管理Whisky需要的相依性套件"
+            "value" : "管理Sili需要的相依性套件"
           }
         }
       }
@@ -16875,133 +16875,133 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "مرحبا بكم في Whisky"
+            "value" : "مرحبا بكم في Sili"
           }
         },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vítejte ve Whisky"
+            "value" : "Vítejte ve Sili"
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Velkommen til Whisky"
+            "value" : "Velkommen til Sili"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Willkommen zu Whisky"
+            "value" : "Willkommen zu Sili"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Welcome to Whisky"
+            "value" : "Welcome to Sili"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bienvenido a Whisky"
+            "value" : "Bienvenido a Sili"
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tervetuloa käyttämään Whiskyä"
+            "value" : "Tervetuloa käyttämään Siliä"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bienvenue sur Whisky"
+            "value" : "Bienvenue sur Sili"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Benvenuto su Whisky"
+            "value" : "Benvenuto su Sili"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Whisky へようこそ"
+            "value" : "Sili へようこそ"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Whisky에 오신 것을 환영합니다"
+            "value" : "Sili에 오신 것을 환영합니다"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Welkom bij Whisky"
+            "value" : "Welkom bij Sili"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Witaj w Whisky"
+            "value" : "Witaj w Sili"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bem-vindo ao Whisky"
+            "value" : "Bem-vindo ao Sili"
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bem-vindo ao Whisky"
+            "value" : "Bem-vindo ao Sili"
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bine ați venit la Whisky"
+            "value" : "Bine ați venit la Sili"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Добро пожаловать в Whisky"
+            "value" : "Добро пожаловать в Sili"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Whisky'ye Hoşgeldiniz"
+            "value" : "Sili'ye Hoşgeldiniz"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ласкаво просимо до Whisky"
+            "value" : "Ласкаво просимо до Sili"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chào mừng đến với Whisky"
+            "value" : "Chào mừng đến với Sili"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "欢迎使用 Whisky"
+            "value" : "欢迎使用 Sili"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "歡迎使用 Whisky"
+            "value" : "歡迎使用 Sili"
           }
         }
       }
@@ -17147,13 +17147,13 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تنزيل WhiskyWine"
+            "value" : "تنزيل Sili Engine"
           }
         },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Stahování WhiskyWine"
+            "value" : "Stahování Sili Engine"
           }
         },
         "da" : {
@@ -17165,31 +17165,31 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "WhiskyWine herunterladen"
+            "value" : "Sili Engine herunterladen"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Downloading WhiskyWine"
+            "value" : "Downloading Sili Engine"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Descargando WhiskyWine"
+            "value" : "Descargando Sili Engine"
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ladataan WhiskyWine"
+            "value" : "Ladataan Sili Engine"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Téléchargement de WhiskyWine"
+            "value" : "Téléchargement de Sili Engine"
           }
         },
         "it" : {
@@ -17201,13 +17201,13 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "WhiskyWine をダウンロード中"
+            "value" : "Sili Engine をダウンロード中"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "WhiskyWine를 다운로드 중입니다."
+            "value" : "Sili Engine를 다운로드 중입니다."
           }
         },
         "nl" : {
@@ -17219,7 +17219,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pobieranie WhiskyWine"
+            "value" : "Pobieranie Sili Engine"
           }
         },
         "pt-BR" : {
@@ -17237,13 +17237,13 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Se descarcă WhiskyWine"
+            "value" : "Se descarcă Sili Engine"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Скачивание WhiskyWine"
+            "value" : "Скачивание Sili Engine"
           }
         },
         "tr" : {
@@ -17255,7 +17255,7 @@
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Завантаження WhiskyWine"
+            "value" : "Завантаження Sili Engine"
           }
         },
         "vi" : {
@@ -17267,13 +17267,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "正在下载 WhiskyWine"
+            "value" : "正在下载 Sili Engine"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "正在下載 WhiskyWine"
+            "value" : "正在下載 Sili Engine"
           }
         }
       }
@@ -17555,13 +17555,13 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تثبيت WhiskyWine"
+            "value" : "تثبيت Sili Engine"
           }
         },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Instalace WhiskyWine"
+            "value" : "Instalace Sili Engine"
           }
         },
         "da" : {
@@ -17573,49 +17573,49 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "WhiskyWine wird installiert"
+            "value" : "Sili Engine wird installiert"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Installing WhiskyWine"
+            "value" : "Installing Sili Engine"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Instalando WhiskyWine"
+            "value" : "Instalando Sili Engine"
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Asennetaan WhiskyWine"
+            "value" : "Asennetaan Sili Engine"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Installation de WhiskyWine"
+            "value" : "Installation de Sili Engine"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Installazione di WhiskyWine"
+            "value" : "Installazione di Sili Engine"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "WhiskyWine をインストール中"
+            "value" : "Sili Engine をインストール中"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "WhiskyWine 설치 중"
+            "value" : "Sili Engine 설치 중"
           }
         },
         "nl" : {
@@ -17627,7 +17627,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Instalowanie WhiskyWine"
+            "value" : "Instalowanie Sili Engine"
           }
         },
         "pt-BR" : {
@@ -17645,13 +17645,13 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Se instalează WhiskyWine"
+            "value" : "Se instalează Sili Engine"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Установка WhiskyWine"
+            "value" : "Установка Sili Engine"
           }
         },
         "tr" : {
@@ -17663,7 +17663,7 @@
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Встановлення WhiskyWine"
+            "value" : "Встановлення Sili Engine"
           }
         },
         "vi" : {
@@ -17675,13 +17675,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "正在安装 WhiskyWine"
+            "value" : "正在安装 Sili Engine"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "正在安裝 WhiskyWine"
+            "value" : "正在安裝 Sili Engine"
           }
         }
       }
@@ -18235,67 +18235,67 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "في بعض الحالات، Whisky لن يكون قادراً على العمل بشكل صحيح من مجلد مختلف"
+            "value" : "في بعض الحالات، Sili لن يكون قادراً على العمل بشكل صحيح من مجلد مختلف"
           }
         },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "V některých případech nemusí být Whisky schopna správně fungovat z jiné složky"
+            "value" : "V některých případech nemusí být Sili schopna správně fungovat z jiné složky"
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "I nogle tilfælde vil Whisky ikke være i stand til at fungere korrekt fra en anden mappe"
+            "value" : "I nogle tilfælde vil Sili ikke være i stand til at fungere korrekt fra en anden mappe"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "In manchen Fällen wird Whisky nicht richtig funktionieren, wenn es in einem anderen Ordner gespeichert ist"
+            "value" : "In manchen Fällen wird Sili nicht richtig funktionieren, wenn es in einem anderen Ordner gespeichert ist"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "In some cases, Whisky wont't be able to function properly from a different folder"
+            "value" : "In some cases, Sili wont't be able to function properly from a different folder"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "En algunos casos, Whisky podría no funcionar correctamente desde una carpeta diferente"
+            "value" : "En algunos casos, Sili podría no funcionar correctamente desde una carpeta diferente"
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Joissakin tapauksissa, Whiskyn ei ole mahdollista toimia kunnolla muista kansioista"
+            "value" : "Joissakin tapauksissa, Silin ei ole mahdollista toimia kunnolla muista kansioista"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dans certains cas, Whisky ne pourra pas fonctionner correctement depuis un dossier différent"
+            "value" : "Dans certains cas, Sili ne pourra pas fonctionner correctement depuis un dossier différent"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "In alcuni casi, Whisky non potrà funzionare correttamente da un cartella diversa"
+            "value" : "In alcuni casi, Sili non potrà funzionare correttamente da un cartella diversa"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "場合によっては、異なるフォルダから Whisky を適切に使用できない場合があります"
+            "value" : "場合によっては、異なるフォルダから Sili を適切に使用できない場合があります"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "경우에 따라 다른 폴더에서는 Whisky가 제대로 동작하지 않을 수 있습니다."
+            "value" : "경우에 따라 다른 폴더에서는 Sili가 제대로 동작하지 않을 수 있습니다."
           }
         },
         "nl" : {
@@ -18307,61 +18307,61 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "W niektórych przypadkach Whisky nie będzie w stanie działać poprawnie w innym folderze"
+            "value" : "W niektórych przypadkach Sili nie będzie w stanie działać poprawnie w innym folderze"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Em alguns casos, o Whisky pode não funcionar corretamente numa pasta diferente"
+            "value" : "Em alguns casos, o Sili pode não funcionar corretamente numa pasta diferente"
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Em alguns casos, o Whisky pode não funcionar corretamente numa pasta diferente"
+            "value" : "Em alguns casos, o Sili pode não funcionar corretamente numa pasta diferente"
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "În unele cazuri, Whisky nu va putea funcționa corect dintr-un folder diferit"
+            "value" : "În unele cazuri, Sili nu va putea funcționa corect dintr-un folder diferit"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "В некоторых случаях Whisky не сможет правильно функционировать из другой папки"
+            "value" : "В некоторых случаях Sili не сможет правильно функционировать из другой папки"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bazı durumlarda, Whisky başka bir klasörden düzgün çalışamayabilir"
+            "value" : "Bazı durumlarda, Sili başka bir klasörden düzgün çalışamayabilir"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "У деяких випадках, Whisky може не працювати належним чином з іншої папки"
+            "value" : "У деяких випадках, Sili може не працювати належним чином з іншої папки"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Trong một số trường hợp, Whisky sẽ không hoạt động đúng nếu không nằm trong Applications"
+            "value" : "Trong một số trường hợp, Sili sẽ không hoạt động đúng nếu không nằm trong Applications"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "在某些情况下，Whisky 可能无法在其他的文件夹中正常工作"
+            "value" : "在某些情况下，Sili 可能无法在其他的文件夹中正常工作"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "在某些情況下，Whisky 可能無法在不同的資料夾中正常運作"
+            "value" : "在某些情況下，Sili 可能無法在不同的資料夾中正常運作"
           }
         }
       }
@@ -18371,67 +18371,67 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "هل ترغب في نقل Whisky إلى مجلد التطبيقات الخاص بك؟"
+            "value" : "هل ترغب في نقل Sili إلى مجلد التطبيقات الخاص بك؟"
           }
         },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chtěli byste přesunout Whisky do složky s aplikacemi?"
+            "value" : "Chtěli byste přesunout Sili do složky s aplikacemi?"
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vil du flytte Whisky til Applications mappen?"
+            "value" : "Vil du flytte Sili til Applications mappen?"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Möchtest du Whisky in deinen Programm-Ordner legen?"
+            "value" : "Möchtest du Sili in deinen Programm-Ordner legen?"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Would you like to move Whisky to your Applications folder?"
+            "value" : "Would you like to move Sili to your Applications folder?"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "¿Te gustaría mover Whisky a la carpeta de Aplicaciones?"
+            "value" : "¿Te gustaría mover Sili a la carpeta de Aplicaciones?"
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Haluatko siirtää Whiskyn Applikaatio-kansioon?"
+            "value" : "Haluatko siirtää Silin Applikaatio-kansioon?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Souhaitez-vous déplacer Whisky dans votre dossier Applications ?"
+            "value" : "Souhaitez-vous déplacer Sili dans votre dossier Applications ?"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vuoi spostare Whisky nella tua cartella Applicazioni?"
+            "value" : "Vuoi spostare Sili nella tua cartella Applicazioni?"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Whisky を「アプリケーション」フォルダに移動しますか？"
+            "value" : "Sili を「アプリケーション」フォルダに移動しますか？"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Whisky를 애플리케이션 폴더로 옮기시겠습니까?"
+            "value" : "Sili를 애플리케이션 폴더로 옮기시겠습니까?"
           }
         },
         "nl" : {
@@ -18443,61 +18443,61 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Czy chcesz przenieść Whisky do folderu Aplikacje?"
+            "value" : "Czy chcesz przenieść Sili do folderu Aplikacje?"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Você gostaria de mover o Whisky para a pasta dos Aplicativos?"
+            "value" : "Você gostaria de mover o Sili para a pasta dos Aplicativos?"
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gostaria de mover o Whisky para a pasta das Aplicações ?"
+            "value" : "Gostaria de mover o Sili para a pasta das Aplicações ?"
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Doriți să mutați Whisky în folder-ul dvs. Aplicații?"
+            "value" : "Doriți să mutați Sili în folder-ul dvs. Aplicații?"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Вы хотите переместить Whisky в папку «Приложения»?"
+            "value" : "Вы хотите переместить Sili в папку «Приложения»?"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Whisky'yi Uygulamalar klasörünüze taşımak ister misiniz?"
+            "value" : "Sili'yi Uygulamalar klasörünüze taşımak ister misiniz?"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Хотіли б ви перемістити Whisky у вашу папку Застосунки?"
+            "value" : "Хотіли б ви перемістити Sili у вашу папку Застосунки?"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bạn có muốn chuyển Whisky tới folder Applications?"
+            "value" : "Bạn có muốn chuyển Sili tới folder Applications?"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "你想要将 Whisky 移动到你的应用程序文件夹吗？"
+            "value" : "你想要将 Sili 移动到你的应用程序文件夹吗？"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "你希望將 Whisky 移動到你的應用程式資料夾嗎？"
+            "value" : "你希望將 Sili 移動到你的應用程式資料夾嗎？"
           }
         }
       }
@@ -18916,7 +18916,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "أنت تقوم بتشغيل WhiskyWine %@، ولكن %@ متوفر. هل ترغب في التحديث؟"
+            "value" : "أنت تقوم بتشغيل Sili Engine %@، ولكن %@ متوفر. هل ترغب في التحديث؟"
           }
         },
         "cs" : {
@@ -18928,121 +18928,121 @@
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Du kører WhiskyWine %@, men %@ er tilgængelig. Ønsker du at opdatere?"
+            "value" : "Du kører Sili Engine %@, men %@ er tilgængelig. Ønsker du at opdatere?"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sie verwenden WhiskyWine %@, die aktuelle Version ist %@. Möchten Sie WhiskyWine aktualisieren?"
+            "value" : "Sie verwenden Sili Engine %@, die aktuelle Version ist %@. Möchten Sie Sili Engine aktualisieren?"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "You are running WhiskyWine %@, but %@ is available. Would you like to update?"
+            "value" : "You are running Sili Engine %@, but %@ is available. Would you like to update?"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Estás ejecutando WhiskyWine %@, pero %@ está disponible. ¿Quieres actualizar?"
+            "value" : "Estás ejecutando Sili Engine %@, pero %@ está disponible. ¿Quieres actualizar?"
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Käytössäsi on WhiskyWine %@, mutta %@ on saatavilla. Haluatko päivittää sen?"
+            "value" : "Käytössäsi on Sili Engine %@, mutta %@ on saatavilla. Haluatko päivittää sen?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vous utilisez WhiskyWine %@, mais %@ est disponible. Voulez-vous le mettre à jour ?"
+            "value" : "Vous utilisez Sili Engine %@, mais %@ est disponible. Voulez-vous le mettre à jour ?"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Stai utilizzando WhiskyWine %@, ma %@ è disponibile. Vuoi aggiornare?"
+            "value" : "Stai utilizzando Sili Engine %@, ma %@ è disponibile. Vuoi aggiornare?"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "現在 WhiskyWine %@ を使用していますが、 %@ を利用可能です。アップデートしますか？"
+            "value" : "現在 Sili Engine %@ を使用していますが、 %@ を利用可能です。アップデートしますか？"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "WhiskyWine %@ 버전을 사용 중이지만 %@ 버전을 사용할 수 있습니다. 업데이트하시겠습니까?"
+            "value" : "Sili Engine %@ 버전을 사용 중이지만 %@ 버전을 사용할 수 있습니다. 업데이트하시겠습니까?"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "U gebruikt WhiskyWine %@, maar %@ is beschikbaar. Wilt u updaten?"
+            "value" : "U gebruikt Sili Engine %@, maar %@ is beschikbaar. Wilt u updaten?"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Używasz WhiskyWine %@, lecz nowsza wersja %@ jest dostępna. Czy chcesz zaktualizować?"
+            "value" : "Używasz Sili Engine %@, lecz nowsza wersja %@ jest dostępna. Czy chcesz zaktualizować?"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "WhiskyWine %@ está sendo usada, mas %@ está disponível. Atualizar?"
+            "value" : "Sili Engine %@ está sendo usada, mas %@ está disponível. Atualizar?"
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Está a usar o WhiskyWine %@, mas o %@ está disponível. Gostaria de atualizar?"
+            "value" : "Está a usar o Sili Engine %@, mas o %@ está disponível. Gostaria de atualizar?"
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dvs. rulați WhiskyWine %@, dar %@ este disponibil. Doriți să actualizați?"
+            "value" : "Dvs. rulați Sili Engine %@, dar %@ este disponibil. Doriți să actualizați?"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Вы используете WhiskyWine %@, но %@ доступен. Желаете обновить?"
+            "value" : "Вы используете Sili Engine %@, но %@ доступен. Желаете обновить?"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "WhiskyWine %@ versiyonu kullanıyorsunuz ama %@ versiyonu mevcut. Güncellemek ister misiniz?"
+            "value" : "Sili Engine %@ versiyonu kullanıyorsunuz ama %@ versiyonu mevcut. Güncellemek ister misiniz?"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ви використовуєте WhiskyWine %@, але доступна версія %@. Оновити?"
+            "value" : "Ви використовуєте Sili Engine %@, але доступна версія %@. Оновити?"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bạn đang sử dụng WhiskyWine phiên bản %@, nhưng phiên bản%@ đã được phát hành. Bạn có muốn cập nhật không?"
+            "value" : "Bạn đang sử dụng Sili Engine phiên bản %@, nhưng phiên bản%@ đã được phát hành. Bạn có muốn cập nhật không?"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "您正在运行 WhiskyWine %@，但 %@ 可用。您想要更新吗？"
+            "value" : "您正在运行 Sili Engine %@，但 %@ 可用。您想要更新吗？"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "您正在使用WhiskyWine %@, %@已可更新 請問是否要更新?"
+            "value" : "您正在使用Sili Engine %@, %@已可更新 請問是否要更新?"
           }
         }
       }
@@ -19052,133 +19052,133 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار جديد من WhiskyWine متوفر"
+            "value" : "إصدار جديد من Sili Engine متوفر"
           }
         },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "K dispozici je nová verze WhiskyWine"
+            "value" : "K dispozici je nová verze Sili Engine"
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ny version af WhiskyWine tilgængelig"
+            "value" : "Ny version af Sili Engine tilgængelig"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Eine neue WhiskyWine Version ist verfügbar"
+            "value" : "Eine neue Sili Engine Version ist verfügbar"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "New Version of WhiskyWine Available"
+            "value" : "New Version of Sili Engine Available"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nueva versión de WhiskyWine disponible"
+            "value" : "Nueva versión de Sili Engine disponible"
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Uusi WhiskyWine versio on saatavilla"
+            "value" : "Uusi Sili Engine versio on saatavilla"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nouvelle version de WhiskyWine disponible"
+            "value" : "Nouvelle version de Sili Engine disponible"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nuova versione di WhiskyWine disponibile"
+            "value" : "Nuova versione di Sili Engine disponibile"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "WhiskyWine の新しいバージョンがあります"
+            "value" : "Sili Engine の新しいバージョンがあります"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "새로운 버전의 WhiskyWine를 사용할 수 있습니다"
+            "value" : "새로운 버전의 Sili Engine를 사용할 수 있습니다"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nieuwe WhiskyWine versie is beschikbaar"
+            "value" : "Nieuwe Sili Engine versie is beschikbaar"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nowa wersja WhiskyWine jest dostępna"
+            "value" : "Nowa wersja Sili Engine jest dostępna"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nova versão do WhiskyWine disponível"
+            "value" : "Nova versão do Sili Engine disponível"
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nova versão do WhiskyWine disponível"
+            "value" : "Nova versão do Sili Engine disponível"
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "O Nouă Versiune WhiskyWine este Disponibilă"
+            "value" : "O Nouă Versiune Sili Engine este Disponibilă"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Доступна новая версия WhiskyWine"
+            "value" : "Доступна новая версия Sili Engine"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "WhiskyWine'nin yeni versiyonu mevcut"
+            "value" : "Sili Engine'nin yeni versiyonu mevcut"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Доступна нова версія WhiskyWine"
+            "value" : "Доступна нова версія Sili Engine"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Phiên bản mới của WhiskyWine đã được phát hành"
+            "value" : "Phiên bản mới của Sili Engine đã được phát hành"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "有更新的 WhiskyWine 版本可用"
+            "value" : "有更新的 Sili Engine 版本可用"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "有新的WhiskyWine版本可供安裝"
+            "value" : "有新的Sili Engine版本可供安裝"
           }
         }
       }
