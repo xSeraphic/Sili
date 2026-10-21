@@ -22,6 +22,48 @@ import QuickLookThumbnailing
 import WhiskyKit
 
 class ProgramShortcut {
+    /// Creates a shortcut app that runs an arbitrary launch command, e.g. a Steam game via `steam://rungameid/`.
+    public static func createShortcut(command: String, icon: NSImage?, app: URL) async {
+        let contents = app.appending(path: "Contents")
+        let macos = contents.appending(path: "MacOS")
+        do {
+            try FileManager.default.createDirectory(at: macos, withIntermediateDirectories: true)
+            let scriptUrl = macos.appending(path: "launch")
+            try "#!/bin/bash\n\(command)\n".write(to: scriptUrl, atomically: false, encoding: .utf8)
+            try FileManager.default.setAttributes([.posixPermissions: 0o755],
+                                                  ofItemAtPath: scriptUrl.path(percentEncoded: false))
+            try infoPlist.write(to: contents.appending(path: "Info").appendingPathExtension("plist"),
+                                atomically: false, encoding: .utf8)
+            if let icon {
+                NSWorkspace.shared.setIcon(icon, forFile: app.path(percentEncoded: false),
+                                           options: NSWorkspace.IconCreationOptions())
+            }
+            NSWorkspace.shared.activateFileViewerSelecting([app])
+        } catch {
+            print(error)
+        }
+    }
+
+    /// Info.plist for shortcut apps. The games category lets macOS turn on Game Mode.
+    private static let infoPlist = """
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0">
+    <dict>
+        <key>CFBundleExecutable</key>
+        <string>launch</string>
+        <key>CFBundleSupportedPlatforms</key>
+        <array>
+            <string>MacOSX</string>
+        </array>
+        <key>LSMinimumSystemVersion</key>
+        <string>14.0</string>
+        <key>LSApplicationCategoryType</key>
+        <string>public.app-category.games</string>
+    </dict>
+    </plist>
+    """
+
     public static func createShortcut(_ program: Program, app: URL, name: String) async {
         let contents = app.appending(path: "Contents")
         let macos = contents.appending(path: "MacOS")

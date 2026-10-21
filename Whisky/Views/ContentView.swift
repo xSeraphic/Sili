@@ -22,6 +22,9 @@ import WhiskyKit
 import SemanticVersion
 
 struct ContentView: View {
+    /// Sidebar selection value for the Library (bottles are selected by their folder URL).
+    static let libraryURL = URL(fileURLWithPath: "/sili-library")
+
     @AppStorage("selectedBottleURL") private var selectedBottleURL: URL?
     @EnvironmentObject var bottleVM: BottleVM
     @Binding var showSetup: Bool
@@ -93,7 +96,9 @@ struct ContentView: View {
             bottleVM.loadBottles()
             bottlesLoaded = true
 
-            if !bottleVM.bottles.isEmpty || bottleVM.countActive() != 0 {
+            if selectedBottleURL == Self.libraryURL {
+                selected = Self.libraryURL
+            } else if !bottleVM.bottles.isEmpty || bottleVM.countActive() != 0 {
                 if let bottle = bottleVM.bottles.first(where: { $0.url == selectedBottleURL && $0.isAvailable }) {
                     selected = bottle.url
                 } else {
@@ -133,6 +138,10 @@ struct ContentView: View {
         ScrollViewReader { proxy in
             List(selection: $selected) {
                 Section {
+                    Label("Library", systemImage: "square.grid.2x2.fill")
+                        .tag(Self.libraryURL)
+                }
+                Section("Bottles") {
                     ForEach(filteredBottles) { bottle in
                         Group {
                             if bottle.inFlight {
@@ -168,7 +177,9 @@ struct ContentView: View {
 
     @ViewBuilder
     var detail: some View {
-        if let bottle = selected {
+        if selected == Self.libraryURL {
+            GameLibraryView(selected: $selected, refresh: $triggerRefresh)
+        } else if let bottle = selected {
             if let bottle = bottleVM.bottles.first(where: { $0.url == bottle }) {
                 BottleView(bottle: bottle)
                     .disabled(bottle.inFlight)
