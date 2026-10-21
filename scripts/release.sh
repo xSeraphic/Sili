@@ -24,9 +24,14 @@ die() { echo "error: $*" >&2; exit 1; }
 git rev-parse "v$VERSION" >/dev/null 2>&1 && die "tag v$VERSION already exists"
 
 CURRENT="$(grep -m1 -o 'MARKETING_VERSION = [0-9.]*' "$PBX" | awk '{print $3}')"
-if [[ "$(printf '%s\n%s\n' "$CURRENT" "$VERSION" | sort -V | tail -1)" != "$VERSION" || "$CURRENT" == "$VERSION" ]]; then
-  # Allow re-using the current number only for the very first release.
-  git tag -l 'v*' | grep -q . && die "$VERSION is not newer than $CURRENT"
+# The version can equal the current one (first release of a number that's already set)
+# but must never go backwards. Upstream Whisky tags (v2.x) are ignored: only our releases count.
+if [[ "$(printf '%s\n%s\n' "$CURRENT" "$VERSION" | sort -V | tail -1)" != "$VERSION" ]]; then
+  die "$VERSION is older than the current version $CURRENT"
+fi
+LAST_RELEASE="$(gh release list --repo "$REPO" --exclude-pre-releases --limit 1 --json tagName --jq '.[0].tagName // ""')"
+if [[ -n "$LAST_RELEASE" && "$(printf '%s\n%s\n' "${LAST_RELEASE#v}" "$VERSION" | sort -V | tail -1)" != "$VERSION" ]]; then
+  die "$VERSION is not newer than the last release $LAST_RELEASE"
 fi
 
 # Release notes from CHANGELOG.md
