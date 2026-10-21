@@ -23,7 +23,7 @@ import Foundation
 /// GitHub Release asset on this fork. Rebuild it with `scripts/build-engine.sh`.
 public enum EngineSource {
     /// GitHub "owner/repo" that hosts the engine release.
-    public static let repository = "xSeraphic/Whisky"
+    public static let repository = "xSeraphic/Sili"
     /// Release tag that always points at the current engine build.
     public static let releaseTag = "engine"
 
