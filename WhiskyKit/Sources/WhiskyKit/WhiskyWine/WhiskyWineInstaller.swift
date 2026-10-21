@@ -61,12 +61,11 @@ public class WhiskyWineInstaller {
     }
 
     public static func shouldUpdateWhiskyWine() async -> (Bool, SemanticVersion) {
-        let versionPlistURL = "https://data.getwhisky.app/Wine/WhiskyWineVersion.plist"
         let localVersion = whiskyWineVersion()
 
         var remoteVersion: SemanticVersion?
 
-        if let remoteUrl = URL(string: versionPlistURL) {
+        if let remoteUrl = EngineSource.versionPlistURL {
             remoteVersion = await withCheckedContinuation { continuation in
                 URLSession(configuration: .ephemeral).dataTask(with: URLRequest(url: remoteUrl)) { data, _, error in
                     do {
