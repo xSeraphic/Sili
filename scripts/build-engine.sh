@@ -11,7 +11,7 @@ set -euo pipefail
 
 WINE_VERSION="${1:-11.18}"
 DXMT_VERSION="${2:-v0.80}"
-ENGINE_VERSION="${3:-3.0.0}"
+ENGINE_VERSION="${3:-3.1.0}"
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 WORK="$(mktemp -d)"
@@ -33,11 +33,21 @@ tar -xzf "$WORK/dxmt.tar.gz" -C "$WORK"
 mkdir -p "$WORK/Libraries"
 mv "$WORK/Wine Staging.app/Contents/Resources/wine" "$WORK/Libraries/Wine"
 
-# DXMT "builtin" build: drop its DLLs over Wine's own d3d11/dxgi builtins.
+# Ship both Direct3D 10/11 implementations; the app switches between them (Settings > Graphics).
+#   Libraries/WineD3D - Wine's own d3d11/dxgi/d3d10core
+#   Libraries/DXMT    - DXMT's versions (Direct3D to Metal) - installed by default
+# winemetal.dll/.so are only used by DXMT's DLLs, so they always live in Wine's lib folder.
 WINELIB="$WORK/Libraries/Wine/lib/wine"
-for arch in x86_64-windows i386-windows x86_64-unix; do
-  [ -d "$WORK/$DXMT_VERSION/$arch" ] && cp -f "$WORK/$DXMT_VERSION/$arch/"* "$WINELIB/$arch/"
+for arch in x86_64-windows i386-windows; do
+  mkdir -p "$WORK/Libraries/WineD3D/$arch" "$WORK/Libraries/DXMT/$arch"
+  for dll in d3d11.dll dxgi.dll d3d10core.dll; do
+    cp "$WINELIB/$arch/$dll" "$WORK/Libraries/WineD3D/$arch/$dll"
+    cp "$WORK/$DXMT_VERSION/$arch/$dll" "$WORK/Libraries/DXMT/$arch/$dll"
+  done
+  cp "$WORK/$DXMT_VERSION/$arch/winemetal.dll" "$WINELIB/$arch/"
+  cp "$WORK/Libraries/DXMT/$arch/"*.dll "$WINELIB/$arch/"   # DXMT active by default
 done
+cp "$WORK/$DXMT_VERSION/x86_64-unix/winemetal.so" "$WINELIB/x86_64-unix/"
 
 cat > "$WORK/Libraries/WhiskyWineVersion.plist" <<PLIST
 <?xml version="1.0" encoding="UTF-8"?>
