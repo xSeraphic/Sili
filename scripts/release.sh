@@ -42,10 +42,13 @@ BUILD_NO=$((BUILD_NO + 1))
 sed -i '' -E "s/MARKETING_VERSION = [0-9.]+;/MARKETING_VERSION = $VERSION;/g; s/CURRENT_PROJECT_VERSION = [0-9]+;/CURRENT_PROJECT_VERSION = $BUILD_NO;/g" "$PBX"
 echo "==> Sili $VERSION (build $BUILD_NO)"
 
-# Build (ad-hoc signed; no paid Apple developer account needed)
+# Build (ad-hoc signed; no paid Apple developer account needed).
+# Hardened runtime is off: with ad-hoc signing its library validation rejects the
+# embedded Sparkle.framework and the app crashes at launch. It is only needed for notarization.
 xcodebuild -project Whisky.xcodeproj -scheme Whisky -configuration Release \
   -destination 'platform=macOS' -derivedDataPath "$BUILD" \
   CODE_SIGN_IDENTITY=- CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= PROVISIONING_PROFILE_SPECIFIER= \
+  ENABLE_HARDENED_RUNTIME=NO \
   build -quiet
 APP="$BUILD/Build/Products/Release/Sili.app"
 [[ -d "$APP" ]] || die "build did not produce Sili.app"

@@ -23,3 +23,4 @@ The first release of Sili, a maintained fork of [Whisky](https://github.com/Whis
 ### Fixed
 - First-run setup failing because the original engine server is offline.
 - Wine 9+ compatibility: use the unified `wine` loader instead of `wine64`.
+- Crash at launch for self-built copies: ad-hoc builds now turn off hardened runtime so the embedded Sparkle framework loads.
