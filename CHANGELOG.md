@@ -4,7 +4,7 @@ All notable changes to Sili are listed here. Versions follow [Semantic Versionin
 
 ## [Unreleased]
 
-Planned as **1.1.0** (minor: new feature, nothing breaking).
+## [1.1.0] - 2026-10-21
 
 ### Added
 - **Game Library**: a new sidebar section showing every game across all bottles in one grid.
