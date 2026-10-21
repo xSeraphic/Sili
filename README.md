@@ -18,9 +18,11 @@ The name comes from *sili*, the chilli at the heart of Bicolano cooking. It's sm
 ## What's different from Whisky
 
 - **Working engine download.** The engine is now hosted on this repo's [`engine` release](https://github.com/xSeraphic/Sili/releases/tag/engine) instead of the offline `data.getwhisky.app` server.
-- **Current Wine.** [Wine Staging 11.18](https://github.com/Gcenx/macOS_Wine_builds) replaces the 2022, CrossOver 22-based build.
-- **DirectX 10/11 to Metal** through [DXMT](https://github.com/3Shain/dxmt).
-- **Reproducible engine builds.** Run `scripts/build-engine.sh` to rebuild the engine from upstream releases.
+- **CrossOver-source engine.** Sili Engine 4 is Wine built from CodeWeavers' open-source [CrossOver 26.3](https://media.codeweavers.com/pub/crossover/source/) code (Wine 11.0), so games that need CrossOver's Mac fixes work. Examples are Age of Empires II: DE and Age of Mythology: EE.
+- **DirectX 10/11 to Metal** through [DXMT](https://github.com/3Shain/dxmt), with [DXVK](https://github.com/Gcenx/DXVK-macOS) and [MoltenVK](https://github.com/KhronosGroup/MoltenVK) available.
+- **Steam that works.** Sili fixes Steam's black window automatically (`tools/webhelper-wrapper.c`).
+- **Game Library** of everything installed across bottles, with Steam cover art.
+- **Reproducible engine builds.** See `scripts/build-engine.sh`.
 - **New name, icon and bundle ID** (`com.mayonstudios.sili`), so Sili doesn't clash with an existing Whisky install.
 
 ## System requirements
@@ -48,9 +50,11 @@ Keep `-derivedDataPath` outside the repo, otherwise SwiftLint will try to lint t
 
 ### Rebuilding the Wine engine
 
+Build the CrossOver-source Wine with [steam-wine](https://github.com/willburnsucla/steam-wine)'s `scripts/build-all.sh`, then:
+
 ```sh
-scripts/build-engine.sh 11.18 v0.80 3.0.0      # wine version, DXMT version, engine version
-gh release upload engine dist/Libraries.tar.gz dist/WhiskyWineVersion.plist --clobber
+scripts/build-engine.sh 4.0.0
+gh release upload engine-4 dist/Libraries.tar.gz dist/WhiskyWineVersion.plist --clobber
 ```
 
 Raising the engine version makes existing installs offer the update.
@@ -67,6 +71,8 @@ Sili is built on the work of these projects and people:
 
 - **[Whisky](https://github.com/Whisky-App/Whisky)** by [Isaac Marovitz](https://github.com/IsaacMarovitz) and [all Whisky contributors](https://github.com/Whisky-App/Whisky/graphs/contributors). The app, its UI, WhiskyKit and WhiskyCmd all come from Whisky. Copyright notices in the source files are kept as required by the GPL.
 - **[Wine](https://www.winehq.org)**, the compatibility layer that makes any of this possible.
+- **[CodeWeavers](https://www.codeweavers.com)**, for publishing CrossOver's Wine source under the LGPL. Sili Engine 4 is built from it. Sili is not CrossOver and isn't endorsed by CodeWeavers. If Sili is useful to you, consider supporting them by buying CrossOver.
+- **[steam-wine](https://github.com/willburnsucla/steam-wine)** by willburnsucla (LGPL-2.1+), whose scripts build the CrossOver-source Wine, DXMT, DXVK and MoltenVK for Sili Engine 4.
 - **[macOS Wine builds](https://github.com/Gcenx/macOS_Wine_builds)** by Gcenx, which provide the Wine Staging engine.
 - **[DXMT](https://github.com/3Shain/dxmt)** by 3Shain, which translates DirectX 10/11 to Metal.
 - **[DXVK-macOS](https://github.com/Gcenx/DXVK-macOS)** by Gcenx and doitsujin, and **[MoltenVK](https://github.com/KhronosGroup/MoltenVK)** by the Khronos Group, both used by Whisky.
@@ -80,6 +86,8 @@ Sili is not affiliated with or endorsed by the Whisky project, WineHQ or CodeWea
 
 Sili is free software, released under the **[GNU General Public License v3.0](LICENSE)**, the same licence as Whisky. You can use, change and share it under the same terms. Any modified versions must also be open source under the GPLv3.
 
-Bundled engine components (Wine, DXMT) are distributed under their own licences. See their repositories for details.
+Bundled engine components are distributed under their own licences. Wine and CrossOver's Wine are LGPL-2.1+; DXMT, DXVK and MoltenVK are under their own licences. The exact sources for each engine build are linked from its GitHub release:
+- [crossover-sources-26.3.0.tar.gz](https://media.codeweavers.com/pub/crossover/source/crossover-sources-26.3.0.tar.gz)
+- the [steam-wine](https://github.com/willburnsucla/steam-wine) patches and build scripts
 
 Maintained by [xSeraphic](https://github.com/xSeraphic) · Mayon Studios

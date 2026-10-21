@@ -21,7 +21,7 @@ Alongside the visible version there's a **build number** (`CURRENT_PROJECT_VERSI
 
 ## Engine version
 
-The Wine engine has its own version in `WhiskyWineVersion.plist`, separate from the app version. It's published on the `engine` release. Bump it with `scripts/build-engine.sh` whenever the engine changes. Installed copies of Sili then offer the new engine.
+The Wine engine has its own version in `WhiskyWineVersion.plist`, separate from the app version. Engine 4.x (CrossOver-source Wine) is published on the `engine-4` release. Engine 3.x (Wine Staging) stays on `engine` for Sili 1.1.x. A new engine major version gets a new release tag, so older apps aren't moved onto an engine they weren't built for. Bump it with `scripts/build-engine.sh` whenever the engine changes. Installed copies of Sili then offer the new engine.
 
 ## How to release
 

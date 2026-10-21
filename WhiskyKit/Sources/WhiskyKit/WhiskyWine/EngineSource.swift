@@ -25,7 +25,7 @@ public enum EngineSource {
     /// GitHub "owner/repo" that hosts the engine release.
     public static let repository = "xSeraphic/Sili"
     /// Release tag that always points at the current engine build.
-    public static let releaseTag = "engine"
+    public static let releaseTag = "engine-4"
 
     private static var releaseBase: String {
         "https://github.com/\(repository)/releases/download/\(releaseTag)"

@@ -4,6 +4,33 @@ All notable changes to Sili are listed here. Versions follow [Semantic Versionin
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-10-22
+
+Minor release: a new engine and several fixes. Nothing breaking. Existing bottles move to the new engine
+automatically, and Steam may ask you to sign in again once.
+
+### Added
+- **Sili Engine 4.0**: Wine built from CodeWeavers' open-source CrossOver 26.3 code (Wine 11.0),
+  with DXMT, DXVK and MoltenVK. It handles games that make direct Windows system calls, plus many
+  Mac-specific fixes. Age of Empires II: DE and Age of Mythology: EE (Windows versions) now reach
+  their main menus. Both crashed or froze on engine 3.x.
+- **Steam black-window fix, applied automatically.** Steam's built-in browser is wrapped so it
+  draws in one process, and the fix is reapplied after every Steam self-update.
+- **Settings > Graphics:** switch DirectX 10/11 between DXMT (default) and Wine's own WineD3D.
+- **Per-game fixes:**
+  - GTA San Andreas is limited to 2 CPU cores (it hangs at startup on many-core Macs).
+  - Known games launch directly, skipping Steam's launch-options dialog, which doesn't render under Wine.
+- **Double-launch guard:** Play in the Library ignores repeat clicks for 20 seconds.
+
+### Changed
+- Engine downloads now come from the `engine-4` release. Sili 1.1.x stays on engine 3.x.
+- Wine Mono/Gecko install prompts are skipped (they hung bottle setup), and Wine no longer adds Mac
+  menu entries for installed programs.
+
+### Fixed
+- Bottle creation hanging on the Wine Mono prompt.
+- Steam's window staying black.
+
 ## [1.1.0] - 2026-10-21
 
 ### Added

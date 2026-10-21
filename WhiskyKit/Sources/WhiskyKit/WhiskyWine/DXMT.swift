@@ -69,6 +69,22 @@ public enum DXMT {
         }
     }
 
+    /// DXMT's Direct3D DLLs load `winemetal.dll`, which has to be in the bottle's Windows folders too.
+    public static func prepare(bottle: Bottle) {
+        guard isEnabled else { return }
+        let windows = bottle.url.appending(path: "drive_c").appending(path: "windows")
+        for (arch, folder) in [("x86_64-windows", "system32"), ("i386-windows", "syswow64")] {
+            let source = wineLibFolder.appending(path: arch).appending(path: "winemetal.dll")
+            let destination = windows.appending(path: folder).appending(path: "winemetal.dll")
+            guard exists(source), exists(destination.deletingLastPathComponent()) else { continue }
+            if let have = try? Data(contentsOf: destination), let want = try? Data(contentsOf: source), have == want {
+                continue
+            }
+            try? FileManager.default.removeItem(at: destination)
+            try? FileManager.default.copyItem(at: source, to: destination)
+        }
+    }
+
     private static func exists(_ url: URL) -> Bool {
         FileManager.default.fileExists(atPath: url.path(percentEncoded: false))
     }
