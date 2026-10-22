@@ -38,7 +38,7 @@ public enum WineActivation {
         while clock.now < deadline {
             let candidates = Set(NSWorkspace.shared.runningApplications.filter(isWine).map(\.processIdentifier))
                 .subtracting(existing)
-            if let pid = firstPIDWithWindow(among: candidates),
+            if let pid = windows(ownedBy: candidates).first?.pid,
                let app = NSRunningApplication(processIdentifier: pid) {
                 NSApp.yieldActivation(to: app)
                 app.activate()
@@ -48,22 +48,50 @@ public enum WineActivation {
         }
     }
 
-    private static func isWine(_ app: NSRunningApplication) -> Bool {
-        app.executableURL?.path(percentEncoded: false).contains("/Libraries/Wine/") ?? false
+    /// On-screen windows of Wine processes right now. Take this snapshot before asking a running program (such as
+    /// Steam) to open a dialog.
+    public static func currentWineWindowIDs() -> Set<CGWindowID> {
+        Set(wineWindows().map(\.id))
     }
 
-    /// A normal on-screen window (layer 0, not tiny) owned by one of `pids`.
-    private static func firstPIDWithWindow(among pids: Set<pid_t>) -> pid_t? {
+    /// Waits for a new window from any Wine process (for example Steam's uninstall dialog) and activates its owner.
+    @MainActor
+    public static func activateNewWindow(excludingWindows existing: Set<CGWindowID>,
+                                         timeout: Duration = .seconds(30)) async {
+        let clock = ContinuousClock()
+        let deadline = clock.now + timeout
+        while clock.now < deadline {
+            if let window = wineWindows().first(where: { !existing.contains($0.id) }),
+               let app = NSRunningApplication(processIdentifier: window.pid) {
+                NSApp.yieldActivation(to: app)
+                app.activate()
+                return
+            }
+            try? await Task.sleep(for: .milliseconds(500))
+        }
+    }
+
+    /// Normal on-screen windows (layer 0, larger than 100×100) owned by Wine processes.
+    private static func wineWindows() -> [(id: CGWindowID, pid: pid_t)] {
+        let pids = Set(NSWorkspace.shared.runningApplications.filter(isWine).map(\.processIdentifier))
+        return windows(ownedBy: pids)
+    }
+
+    private static func windows(ownedBy pids: Set<pid_t>) -> [(id: CGWindowID, pid: pid_t)] {
         guard !pids.isEmpty,
-              let windows = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements],
-                                                       kCGNullWindowID) as? [[String: Any]] else { return nil }
-        for window in windows {
+              let list = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements],
+                                                    kCGNullWindowID) as? [[String: Any]] else { return [] }
+        return list.compactMap { window in
             guard let pid = window[kCGWindowOwnerPID as String] as? pid_t, pids.contains(pid),
+                  let id = window[kCGWindowNumber as String] as? CGWindowID,
                   (window[kCGWindowLayer as String] as? Int) == 0,
                   let bounds = window[kCGWindowBounds as String] as? [String: CGFloat],
-                  (bounds["Width"] ?? 0) > 100, (bounds["Height"] ?? 0) > 100 else { continue }
-            return pid
+                  (bounds["Width"] ?? 0) > 100, (bounds["Height"] ?? 0) > 100 else { return nil }
+            return (id, pid)
         }
-        return nil
+    }
+
+    private static func isWine(_ app: NSRunningApplication) -> Bool {
+        app.executableURL?.path(percentEncoded: false).contains("/Libraries/Wine/") ?? false
     }
 }

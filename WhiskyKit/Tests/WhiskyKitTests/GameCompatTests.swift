@@ -64,6 +64,24 @@ struct GameCompatTests {
         #expect(SteamLauncher.activeUser(fromRegOutput: "ERROR: Unable to find the specified registry value") == nil)
     }
 
+    @Test func findsSteamManifestAndNoticesRemoval() async throws {
+        let root = FileManager.default.temporaryDirectory.appending(path: "sili-tests-\(UUID().uuidString)")
+        defer { try? FileManager.default.removeItem(at: root) }
+        let steamapps = root.appending(path: "drive_c/Program Files (x86)/Steam/steamapps")
+        let folder = steamapps.appending(path: "common").appending(path: "Game")
+        try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
+        let manifest = steamapps.appending(path: "appmanifest_42.acf")
+        try "x".write(to: manifest, atomically: true, encoding: .utf8)
+        let game = LibraryGame(id: "steam-42", name: "Game",
+                               source: .steam(appID: 42, steamExecutable: root.appending(path: "steam.exe")),
+                               bottleURL: root, bottleName: "Steam", installFolder: folder,
+                               localArtwork: nil, sizeOnDisk: nil, lastPlayed: nil)
+        #expect(SteamLauncher.manifest(for: game)?.path(percentEncoded: false) == manifest.path(percentEncoded: false))
+        #expect(await !SteamLauncher.waitForRemoval(of: game, timeout: .milliseconds(100)))
+        try FileManager.default.removeItem(at: manifest)
+        #expect(await SteamLauncher.waitForRemoval(of: game, timeout: .seconds(1)))
+    }
+
     @Test func knownGamesHaveFixes() {
         #expect(GameCompat.steam[AoE2Fix.appID]?.executable == "AoE2DE_s.exe")
         #expect(GameCompat.steam[266840]?.environment["WINE_D3D_CONFIG"] == "renderer=vulkan")

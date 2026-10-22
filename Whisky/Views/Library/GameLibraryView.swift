@@ -67,7 +67,8 @@ struct GameLibraryView: View {
                         ForEach(visibleGames) { game in
                             GameCard(game: game,
                                      onPlay: { launch(game) },
-                                     onOpenBottle: { selected = game.bottleURL })
+                                     onOpenBottle: { selected = game.bottleURL },
+                                     onRemoved: { Task { await reload() } })
                         }
                     }
                     .padding(24)
@@ -148,142 +149,6 @@ struct GameLibraryView: View {
             }
         case .pinned(let exe):
             Program(url: exe, bottle: bottle).run()
-        }
-    }
-}
-
-/// One game tile: artwork, title, bottle, with hover-to-play.
-struct GameCard: View {
-    let game: LibraryGame
-    let onPlay: () -> Void
-    let onOpenBottle: () -> Void
-
-    @EnvironmentObject var bottleVM: BottleVM
-    @State private var hovering = false
-    @State private var launching = false
-    @State private var artwork: NSImage?
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            GameArtwork(game: game, loaded: $artwork)
-                .aspectRatio(2 / 3, contentMode: .fit)
-                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                .overlay {
-                    RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .strokeBorder(.white.opacity(hovering ? 0.35 : 0.08), lineWidth: 1)
-                }
-                .overlay { playOverlay }
-                .shadow(color: .black.opacity(hovering ? 0.45 : 0.25), radius: hovering ? 14 : 6, y: hovering ? 8 : 3)
-                .scaleEffect(hovering ? 1.03 : 1)
-
-            VStack(alignment: .leading, spacing: 2) {
-                Text(game.name)
-                    .font(.headline)
-                    .lineLimit(1)
-                HStack(spacing: 4) {
-                    Image(systemName: game.isSteam ? "cloud.fill" : "pin.fill")
-                        .imageScale(.small)
-                    Text(game.bottleName)
-                        .lineLimit(1)
-                }
-                .font(.caption)
-                .foregroundStyle(.secondary)
-            }
-        }
-        .contentShape(Rectangle())
-        .onHover { over in
-            withAnimation(.spring(response: 0.25, dampingFraction: 0.8)) { hovering = over }
-        }
-        .onTapGesture(count: 2) { play() }
-        .help(game.name)
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text("\(game.name), \(game.bottleName)"))
-        .accessibilityAddTraits(.isButton)
-        .accessibilityHint(Text("Double-click to play"))
-        .accessibilityAction { play() }
-        .accessibilityAction(named: Text("Open Bottle")) { onOpenBottle() }
-        .contextMenu {
-            Button("Play", systemImage: "play.fill") { play() }
-            Divider()
-            Button("Create Dock Shortcut…", systemImage: "app.badge") { createShortcut() }
-            if let folder = game.installFolder {
-                Button("Show in Finder", systemImage: "folder") {
-                    NSWorkspace.shared.activateFileViewerSelecting([folder])
-                }
-            }
-            Button("Open Bottle", systemImage: "wineglass") { onOpenBottle() }
-        }
-    }
-
-    @ViewBuilder
-    private var playOverlay: some View {
-        ZStack {
-            if hovering || launching {
-                LinearGradient(colors: [.clear, .black.opacity(0.55)], startPoint: .center, endPoint: .bottom)
-                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                VStack {
-                    Spacer()
-                    Button(action: play) {
-                        Group {
-                            if launching {
-                                ProgressView().controlSize(.small)
-                            } else {
-                                Label("Play", systemImage: "play.fill")
-                            }
-                        }
-                        .font(.callout.weight(.semibold))
-                        .frame(maxWidth: .infinity)
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .tint(Color(red: 0.86, green: 0.13, blue: 0.16))
-                    .controlSize(.large)
-                    .padding(10)
-                    .disabled(launching)
-                }
-                .transition(.opacity)
-            }
-        }
-    }
-
-    private func play() {
-        guard !launching else { return }
-        launching = true
-        onPlay()
-        // Wine can take a while to bring the game up; keep the spinner (and block re-clicks) meanwhile.
-        DispatchQueue.main.asyncAfter(deadline: .now() + 20) { launching = false }
-    }
-
-    private func createShortcut() {
-        guard let bottle = bottleVM.bottles.first(where: { $0.url == game.bottleURL }) else { return }
-        let panel = NSSavePanel()
-        panel.directoryURL = FileManager.default.urls(for: .applicationDirectory, in: .userDomainMask).first
-        panel.canCreateDirectories = true
-        panel.allowedContentTypes = [UTType.applicationBundle]
-        panel.allowsOtherFileTypes = false
-        panel.isExtensionHidden = true
-        panel.nameFieldStringValue = game.name + ".app"
-        panel.begin { result in
-            guard result == .OK, let url = panel.url else { return }
-            Task(priority: .userInitiated) {
-                switch game.source {
-                case .steam(let appID, let steamExe):
-                    var command = Wine.generateRunCommand(
-                        at: steamExe, bottle: bottle, args: "-silent steam://rungameid/\(appID)", environment: [:]
-                    )
-                    if let direct = GameCompat.forGame(game) {
-                        GameCompat.prepareDirectLaunch(appID: appID, executable: direct.executable, bottle: bottle)
-                        command = Wine.generateRunCommand(
-                            at: steamExe, bottle: bottle, args: "-silent -noverifyfiles", environment: [:]
-                        ) + "; " + SteamLauncher.shellWaitForSteam(bottle: bottle) + "; " + Wine.generateRunCommand(
-                            at: direct.executable, bottle: bottle, args: "", environment: direct.compat.environment
-                        )
-                    }
-                    await ProgramShortcut.createShortcut(command: command, icon: artwork, app: url)
-                case .pinned(let exe):
-                    await ProgramShortcut.createShortcut(Program(url: exe, bottle: bottle), app: url,
-                                                         name: url.deletingPathExtension().lastPathComponent)
-                }
-            }
         }
     }
 }

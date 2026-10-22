@@ -4,6 +4,17 @@ All notable changes to Sili are listed here. Versions follow [Semantic Versionin
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-10-22
+
+Minor release: uninstall games from the Library.
+
+### Added
+- **Uninstall from the Library.** Each game card has a "…" button next to Play (and the same options when
+  you right-click): Create Dock Shortcut, Show in Finder, Open Bottle, and **Uninstall…**. For Steam games,
+  Sili asks first, then hands over to Steam's own uninstaller, which confirms again and deletes the files. Sili
+  brings Steam's dialog to the front and removes the game from the Library once it's gone. Pinned programs get
+  **Remove from Library** instead, which unpins them without touching their files.
+
 ## [1.2.2] - 2026-10-22
 
 Patch release: fixes found in a full test pass.
