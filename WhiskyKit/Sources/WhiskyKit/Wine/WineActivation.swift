@@ -71,6 +71,27 @@ public enum WineActivation {
         }
     }
 
+    /// For a launch that goes through Steam: brings each new Wine window to the front as it appears, so Steam's
+    /// first-launch dialogs (launch options, EULA, "Launching…") aren't hidden behind other apps, and stops once a
+    /// window from a new process (the game itself) has been activated.
+    @MainActor
+    public static func followLaunch(existingPIDs: Set<pid_t>, existingWindows: Set<CGWindowID>,
+                                    timeout: Duration = .seconds(120)) async {
+        let clock = ContinuousClock()
+        let deadline = clock.now + timeout
+        var handled = existingWindows
+        while clock.now < deadline {
+            for window in wineWindows() where !handled.contains(window.id) {
+                handled.insert(window.id)
+                guard let app = NSRunningApplication(processIdentifier: window.pid) else { continue }
+                NSApp.yieldActivation(to: app)
+                app.activate()
+                if !existingPIDs.contains(window.pid) { return }
+            }
+            try? await Task.sleep(for: .milliseconds(500))
+        }
+    }
+
     /// Normal on-screen windows (layer 0, larger than 100×100) owned by Wine processes.
     private static func wineWindows() -> [(id: CGWindowID, pid: pid_t)] {
         let pids = Set(NSWorkspace.shared.runningApplications.filter(isWine).map(\.processIdentifier))

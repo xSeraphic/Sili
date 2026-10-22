@@ -129,6 +129,7 @@ struct GameLibraryView: View {
         switch game.source {
         case .steam(let appID, let steamExe):
             let existingWine = WineActivation.currentWinePIDs()
+            let existingWindows = WineActivation.currentWineWindowIDs()
             if let direct = GameCompat.forGame(game) {
                 // Known game: make sure one Steam client is up and signed in (for DRM), then start the game itself
                 // with its workarounds. This also skips Steam's launch-options dialog, which doesn't render under
@@ -138,13 +139,13 @@ struct GameLibraryView: View {
                     await SteamLauncher.ensureRunning(steamExe: steamExe, bottle: bottle)
                     try? await Wine.runProgram(at: direct.executable, bottle: bottle,
                                                environment: direct.compat.environment)
-                    await WineActivation.activateNewWindow(excluding: existingWine)
+                    await WineActivation.followLaunch(existingPIDs: existingWine, existingWindows: existingWindows)
                 }
             } else {
                 Task.detached(priority: .userInitiated) {
                     try? await Wine.runProgram(at: steamExe, args: ["-silent", "steam://rungameid/\(appID)"],
                                                bottle: bottle)
-                    await WineActivation.activateNewWindow(excluding: existingWine)
+                    await WineActivation.followLaunch(existingPIDs: existingWine, existingWindows: existingWindows)
                 }
             }
         case .pinned(let exe):

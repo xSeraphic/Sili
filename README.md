@@ -73,6 +73,21 @@ Not every game works. Games with kernel-level anti-cheat (Vanguard, some Easy An
 
 ---
 
+### Tested with Sili
+
+Tested on an M4 Max MacBook Pro (macOS 27) with Sili Engine 4.
+
+| Game | Result | Notes |
+| --- | --- | --- |
+| Age of Empires II: DE | Works | Uses DXMT. Sili fixes its menu text automatically. |
+| Age of Mythology: EE | Works | Sili switches it to Vulkan and turns off the Steam overlay for smoother play. |
+| Grand Theft Auto: San Andreas | Works | Sili limits it to 2 CPU cores so it doesn't hang at startup. |
+| Castle Crashers | Works | |
+| Doki Doki Literature Club! | Works | |
+| Emily Wants To Play | Works | Unreal Engine 4, DirectX 11. Steam asks which launch option to use the first time. |
+| Rustbucket Rumble | Works | Steam asks you to accept the game's EULA the first time. |
+| Scribblenauts Unlimited | Works | Takes about a minute to start. On ultrawide screens the bottom of the main menu is cut off. |
+
 ## Credits & Acknowledgments
 
 Sili is built on the work of these projects and people:

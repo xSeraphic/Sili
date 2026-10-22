@@ -4,6 +4,16 @@ All notable changes to Sili are listed here. Versions follow [Semantic Versionin
 
 ## [Unreleased]
 
+## [1.3.1] - 2026-10-22
+
+Patch release: fix from testing more games.
+
+### Fixed
+- **Steam's first-launch dialogs were hidden.** Some games show a Steam dialog the first time you play them
+  (choosing a launch option, or accepting the game's EULA). These opened behind other windows, so pressing
+  Play seemed to do nothing. Sili now brings each new Steam dialog to the front during a launch, then the game
+  window once it appears.
+
 ## [1.3.0] - 2026-10-22
 
 Minor release: uninstall games from the Library.
