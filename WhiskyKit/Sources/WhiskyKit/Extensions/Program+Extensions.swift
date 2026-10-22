@@ -30,14 +30,18 @@ extension Program {
     }
 
     func runInWine() {
+        // Ignore double-clicks: two copies of Steam under Wine break every game's connection to it.
+        guard LaunchGuard.shared.shouldLaunch(url.path(percentEncoded: false)) else { return }
         let arguments = settings.arguments.split { $0.isWhitespace }.map(String.init)
         let environment = generateEnvironment()
+        let existingWine = WineActivation.currentWinePIDs()
 
         Task.detached(priority: .userInitiated) {
             do {
                 try await Wine.runProgram(
                     at: self.url, args: arguments, bottle: self.bottle, environment: environment
                 )
+                await WineActivation.activateNewWindow(excluding: existingWine)
             } catch {
                 await MainActor.run {
                     self.showRunError(message: error.localizedDescription)

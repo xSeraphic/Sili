@@ -127,20 +127,23 @@ struct GameLibraryView: View {
         guard let bottle = bottleVM.bottles.first(where: { $0.url == game.bottleURL }) else { return }
         switch game.source {
         case .steam(let appID, let steamExe):
+            let existingWine = WineActivation.currentWinePIDs()
             if let direct = GameCompat.forGame(game) {
-                // Known game: make sure Steam is up (for DRM), then start the game itself with its workarounds.
-                // This also skips Steam's launch-options dialog, which doesn't render under Wine on macOS.
+                // Known game: make sure one Steam client is up and signed in (for DRM), then start the game itself
+                // with its workarounds. This also skips Steam's launch-options dialog, which doesn't render under
+                // Wine on macOS.
                 GameCompat.prepareDirectLaunch(appID: appID, executable: direct.executable, bottle: bottle)
                 Task.detached(priority: .userInitiated) {
-                    try? await Wine.runProgram(at: steamExe, args: ["-silent", "-noverifyfiles"], bottle: bottle)
-                    try? await Task.sleep(for: .seconds(3))
+                    await SteamLauncher.ensureRunning(steamExe: steamExe, bottle: bottle)
                     try? await Wine.runProgram(at: direct.executable, bottle: bottle,
                                                environment: direct.compat.environment)
+                    await WineActivation.activateNewWindow(excluding: existingWine)
                 }
             } else {
                 Task.detached(priority: .userInitiated) {
                     try? await Wine.runProgram(at: steamExe, args: ["-silent", "steam://rungameid/\(appID)"],
                                                bottle: bottle)
+                    await WineActivation.activateNewWindow(excluding: existingWine)
                 }
             }
         case .pinned(let exe):
@@ -193,6 +196,12 @@ struct GameCard: View {
         }
         .onTapGesture(count: 2) { play() }
         .help(game.name)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text("\(game.name), \(game.bottleName)"))
+        .accessibilityAddTraits(.isButton)
+        .accessibilityHint(Text("Double-click to play"))
+        .accessibilityAction { play() }
+        .accessibilityAction(named: Text("Open Bottle")) { onOpenBottle() }
         .contextMenu {
             Button("Play", systemImage: "play.fill") { play() }
             Divider()
@@ -265,7 +274,7 @@ struct GameCard: View {
                         GameCompat.prepareDirectLaunch(appID: appID, executable: direct.executable, bottle: bottle)
                         command = Wine.generateRunCommand(
                             at: steamExe, bottle: bottle, args: "-silent -noverifyfiles", environment: [:]
-                        ) + "; sleep 3; " + Wine.generateRunCommand(
+                        ) + "; " + SteamLauncher.shellWaitForSteam(bottle: bottle) + "; " + Wine.generateRunCommand(
                             at: direct.executable, bottle: bottle, args: "", environment: direct.compat.environment
                         )
                     }

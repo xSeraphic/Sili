@@ -227,7 +227,7 @@ public class Wine {
     }
 
     /// Construct an environment merging the bottle values with the given values
-    private static func constructWineEnvironment(
+    static func constructWineEnvironment(
         for bottle: Bottle, environment: [String: String] = [:]
     ) -> [String: String] {
         var result: [String: String] = [
