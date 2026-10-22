@@ -46,6 +46,32 @@ public enum SteamLauncher {
         return UInt64(value.dropFirst(2), radix: 16)
     }
 
+    /// Asks Steam to uninstall a game. Steam shows its own confirmation and deletes the files.
+    public static func uninstall(appID: Int, steamExe: URL, bottle: Bottle) async {
+        await ensureRunning(steamExe: steamExe, bottle: bottle, timeout: .seconds(60))
+        try? await Wine.runProgram(at: steamExe, args: ["steam://uninstall/\(appID)"], bottle: bottle)
+    }
+
+    /// Steam's manifest for an installed game: `steamapps/appmanifest_<id>.acf`, next to `steamapps/common`.
+    static func manifest(for game: LibraryGame) -> URL? {
+        guard let appID = game.steamAppID, let folder = game.installFolder else { return nil }
+        return folder.deletingLastPathComponent().deletingLastPathComponent()
+            .appending(path: "appmanifest_\(appID).acf")
+    }
+
+    /// Waits until Steam has removed the game's manifest (it was uninstalled). Returns false if that doesn't happen
+    /// within `timeout`, for example because you cancelled in Steam.
+    public static func waitForRemoval(of game: LibraryGame, timeout: Duration = .seconds(300)) async -> Bool {
+        guard let manifest = manifest(for: game) else { return false }
+        let clock = ContinuousClock()
+        let deadline = clock.now + timeout
+        while clock.now < deadline {
+            if !FileManager.default.fileExists(atPath: manifest.path(percentEncoded: false)) { return true }
+            try? await Task.sleep(for: .seconds(2))
+        }
+        return false
+    }
+
     /// Shell commands for Dock shortcuts: wait (up to about 95 seconds) for Steam to sign in.
     public static func shellWaitForSteam(bottle: Bottle) -> String {
         let env = Wine.constructWineEnvironment(for: bottle)
