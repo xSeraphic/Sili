@@ -47,6 +47,23 @@ struct GameCompatTests {
         #expect(env["WINEPREFIX"] == "/x")
     }
 
+    @Test func launchGuardIgnoresQuickRepeats() {
+        let guardian = LaunchGuard()
+        let start = Date()
+        #expect(guardian.shouldLaunch("steam.exe", now: start))
+        #expect(!guardian.shouldLaunch("steam.exe", now: start.addingTimeInterval(1)))
+        #expect(guardian.shouldLaunch("game.exe", now: start.addingTimeInterval(1)))
+        #expect(guardian.shouldLaunch("steam.exe", now: start.addingTimeInterval(LaunchGuard.interval + 1)))
+    }
+
+    @Test func parsesSteamActiveUser() {
+        let signedIn = "HKEY_CURRENT_USER\\Software\\Valve\\Steam\\ActiveProcess\n"
+            + "    ActiveUser    REG_DWORD    0x4fb16a2\n"
+        #expect(SteamLauncher.activeUser(fromRegOutput: signedIn) == 0x4fb16a2)
+        #expect(SteamLauncher.activeUser(fromRegOutput: "    ActiveUser    REG_DWORD    0x0") == 0)
+        #expect(SteamLauncher.activeUser(fromRegOutput: "ERROR: Unable to find the specified registry value") == nil)
+    }
+
     @Test func knownGamesHaveFixes() {
         #expect(GameCompat.steam[AoE2Fix.appID]?.executable == "AoE2DE_s.exe")
         #expect(GameCompat.steam[266840]?.environment["WINE_D3D_CONFIG"] == "renderer=vulkan")

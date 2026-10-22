@@ -70,6 +70,7 @@ struct ContentView: View {
                 } label: {
                     Image(systemName: "arrow.triangle.2.circlepath")
                         .help("button.refresh")
+                        .accessibilityLabel(Text("button.refresh"))
                         .rotationEffect(refreshAnimation)
                 }
             }

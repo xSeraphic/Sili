@@ -4,6 +4,21 @@ All notable changes to Sili are listed here. Versions follow [Semantic Versionin
 
 ## [Unreleased]
 
+## [1.2.2] - 2026-10-22
+
+Patch release: fixes found in a full test pass.
+
+### Fixed
+- **"Game failed to initialize Steam."** Clicking Steam more than once could start two Steam clients, and games
+  then couldn't connect. Sili now ignores repeat launches of the same program for 10 seconds. Before starting
+  a game, it checks whether Steam is already running in the bottle and waits until Steam has signed in
+  (instead of a fixed 3 seconds). Dock shortcuts wait for Steam in the same way.
+- **Games opening behind other windows.** Sili now brings a game to the front when its first window appears.
+  GTA San Andreas' screen picker no longer hides behind other apps, and fullscreen games hide the menu bar and
+  Dock as they should.
+- **Accessibility:** game cards in the Library work with VoiceOver (with Play and Open Bottle actions), and the
+  refresh button is labelled "Refresh" instead of "Syncing".
+
 ## [1.2.1] - 2026-10-22
 
 Patch release: per-game fixes for Age of Empires II: DE and Age of Mythology: EE.
