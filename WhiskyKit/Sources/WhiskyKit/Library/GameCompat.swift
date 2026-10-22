@@ -35,9 +35,16 @@ public struct GameCompat: Sendable, Equatable {
                           reason: "Hangs at startup with many CPU cores; limit to 2."),
         // Steam shows a launch-options dialog for this game, which doesn't render under Wine on macOS.
         // Launching the game executable directly skips it.
+        // Also: the engine is DirectX 9, which Wine draws faster through Vulkan (MoltenVK) than through
+        // macOS's OpenGL, and the Steam overlay causes heavy stutter under Wine.
         266840: GameCompat(executable: "AoMX.exe",
-                           environment: [:],
-                           reason: "Skip Steam's launch-options dialog.")
+                           environment: ["WINE_D3D_CONFIG": "renderer=vulkan",
+                                         "WINEDLLOVERRIDES": "gameoverlayrenderer="],
+                           reason: "Skip Steam's launch-options dialog; Vulkan renderer; no Steam overlay."),
+        // Launched directly so its profile can be fixed first (see AoE2Fix).
+        AoE2Fix.appID: GameCompat(executable: "AoE2DE_s.exe",
+                                  environment: [:],
+                                  reason: "Menu text is cut in half with the default font under DXMT.")
     ]
 
     /// Workarounds keyed by executable file name (lowercased), for pinned programs.
@@ -57,7 +64,9 @@ public struct GameCompat: Sendable, Equatable {
 
     /// Writes `steam_appid.txt` next to the executable so a Steamworks game can start without being
     /// relaunched through the Steam client (which would show dialogs Wine can't render).
-    public static func prepareDirectLaunch(appID: Int, executable: URL) {
+    /// Also applies any game-specific file fixes in the bottle.
+    public static func prepareDirectLaunch(appID: Int, executable: URL, bottle: Bottle) {
+        if appID == AoE2Fix.appID { AoE2Fix.apply(to: bottle) }
         let file = executable.deletingLastPathComponent().appending(path: "steam_appid.txt")
         guard !FileManager.default.fileExists(atPath: file.path(percentEncoded: false)) else { return }
         try? "\(appID)".write(to: file, atomically: true, encoding: .utf8)

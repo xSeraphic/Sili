@@ -4,6 +4,18 @@ All notable changes to Sili are listed here. Versions follow [Semantic Versionin
 
 ## [Unreleased]
 
+## [1.2.1] - 2026-10-22
+
+Patch release: per-game fixes for Age of Empires II: DE and Age of Mythology: EE.
+
+### Fixed
+- **Age of Empires II: DE:** gold menu text (button labels, player names) was cut in half. Sili now
+  switches the game to its "Smooth Serif" font, which draws correctly and looks almost the same.
+  Applies from the second launch, since the game creates its settings on the first one.
+- **Age of Mythology: EE:** much less stutter. The game now draws through Vulkan (MoltenVK) instead of
+  macOS's OpenGL, and the Steam overlay, which caused heavy stutter under Wine, is turned off for it.
+- Per-game DLL overrides no longer replace Sili's default overrides.
+
 ## [1.2.0] - 2026-10-22
 
 Minor release: a new engine and several fixes. Nothing breaking. Existing bottles move to the new engine

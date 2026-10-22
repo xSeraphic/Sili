@@ -130,7 +130,7 @@ struct GameLibraryView: View {
             if let direct = GameCompat.forGame(game) {
                 // Known game: make sure Steam is up (for DRM), then start the game itself with its workarounds.
                 // This also skips Steam's launch-options dialog, which doesn't render under Wine on macOS.
-                GameCompat.prepareDirectLaunch(appID: appID, executable: direct.executable)
+                GameCompat.prepareDirectLaunch(appID: appID, executable: direct.executable, bottle: bottle)
                 Task.detached(priority: .userInitiated) {
                     try? await Wine.runProgram(at: steamExe, args: ["-silent", "-noverifyfiles"], bottle: bottle)
                     try? await Task.sleep(for: .seconds(3))
@@ -262,7 +262,7 @@ struct GameCard: View {
                         at: steamExe, bottle: bottle, args: "-silent steam://rungameid/\(appID)", environment: [:]
                     )
                     if let direct = GameCompat.forGame(game) {
-                        GameCompat.prepareDirectLaunch(appID: appID, executable: direct.executable)
+                        GameCompat.prepareDirectLaunch(appID: appID, executable: direct.executable, bottle: bottle)
                         command = Wine.generateRunCommand(
                             at: steamExe, bottle: bottle, args: "-silent -noverifyfiles", environment: [:]
                         ) + "; sleep 3; " + Wine.generateRunCommand(

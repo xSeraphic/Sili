@@ -121,7 +121,7 @@ struct GameLibraryTests {
         #expect(direct.compat.environment["WINE_CPU_TOPOLOGY"] == "2:0,1")
         #expect(GameCompat.byExecutable["gta-sa.exe"] != nil)
 
-        GameCompat.prepareDirectLaunch(appID: 12120, executable: direct.executable)
+        GameCompat.prepareDirectLaunch(appID: 12120, executable: direct.executable, bottle: bottle)
         let appid = try String(contentsOf: exe.deletingLastPathComponent().appending(path: "steam_appid.txt"),
                                encoding: .utf8)
         #expect(appid == "12120")

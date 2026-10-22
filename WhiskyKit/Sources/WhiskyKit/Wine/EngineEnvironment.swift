@@ -32,6 +32,21 @@ enum EngineEnvironment {
             .compactMap { $0 }.joined(separator: ";")
     }
 
+    /// The bottle environment with the engine defaults applied, then `extra` on top. `WINEDLLOVERRIDES` from
+    /// `extra` (for example a per-game fix) is added to the existing overrides instead of replacing them.
+    static func merged(_ base: [String: String], with extra: [String: String]) -> [String: String] {
+        var env = base
+        apply(to: &env)
+        for (key, value) in extra {
+            if key == "WINEDLLOVERRIDES", let existing = env[key], !existing.isEmpty {
+                env[key] = value + ";" + existing
+            } else {
+                env[key] = value
+            }
+        }
+        return env
+    }
+
     /// Per-launch fixes: DXMT's helper DLL in the bottle, Steam's black-window wrapper and launch flags.
     /// Returns the arguments to launch with.
     static func prepareLaunch(of program: URL, args: [String], bottle: Bottle) -> [String] {
