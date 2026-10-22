@@ -236,10 +236,7 @@ public class Wine {
             "GST_DEBUG": "1"
         ]
         bottle.settings.environmentVariables(wineEnv: &result)
-        EngineEnvironment.apply(to: &result)
-        guard !environment.isEmpty else { return result }
-        result.merge(environment, uniquingKeysWith: { $1 })
-        return result
+        return EngineEnvironment.merged(result, with: environment)
     }
 
     /// Construct an environment merging the bottle values with the given values
