@@ -11,6 +11,8 @@ Sili is a free, open-source macOS app for running Windows software (including St
 
 The name comes from *sili*, the chilli at the heart of Bicolano cooking. It's small, quick and a bit fiery.
 
+> **Status: personal project, in development.** Sili is a work in progress used in-house at Mayon Studios. It isn't offered for general use yet, and builds may change or break without notice.
+
 > **Sili is a fork of [Whisky](https://github.com/Whisky-App/Whisky)** by Isaac Marovitz and contributors. Whisky stopped being maintained in 2025, and its engine download server has since gone offline, so new installs no longer work. Sili continues the project with a current Wine engine and new features. See [Credits](#credits--acknowledgments).
 
 ---
@@ -24,6 +26,12 @@ The name comes from *sili*, the chilli at the heart of Bicolano cooking. It's sm
 - **Game Library** of everything installed across bottles, with Steam cover art.
 - **Reproducible engine builds.** See `scripts/build-engine.sh`.
 - **New name, icon and bundle ID** (`com.mayonstudios.sili`), so Sili doesn't clash with an existing Whisky install.
+
+## How Sili is made
+
+Sili is maintained by Rhyss ([xSeraphic](https://github.com/xSeraphic)) at Mayon Studios and developed with AI assistance from [Claude](https://claude.ai) by Anthropic. Rhyss sets the direction, tests games and decides what ships, and Claude writes much of the code.
+
+Most of what makes Sili work comes from other people's open-source projects: Whisky, Wine, CodeWeavers' open-source CrossOver code, DXMT, DXVK and MoltenVK. See [Credits](#credits--acknowledgments). If Sili is useful to you, please consider supporting those projects too.
 
 ## System requirements
 
